@@ -1,0 +1,313 @@
+/* Symptoms Page Styles */
+
+.symptoms-page {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Analysis Summary */
+.analysis-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-6);
+}
+
+.summary-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-4);
+    border-radius: var(--radius-xl);
+    text-align: center;
+}
+
+.summary-value {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.summary-label {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    text-transform: capitalize;
+}
+
+.trend-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.trend-icon.improving {
+    color: var(--color-success);
+}
+
+.trend-icon.worsening {
+    color: var(--color-error);
+}
+
+.trend-icon.stable {
+    color: var(--text-muted);
+}
+
+/* Today's Symptoms */
+.symptom-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-2);
+}
+
+.symptom-chip {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-2) var(--spacing-3);
+    background: var(--color-primary-100);
+    color: var(--color-primary-700);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+}
+
+.symptom-chip .symptom-name {
+    text-transform: capitalize;
+}
+
+.symptom-chip .symptom-severity {
+    font-weight: 600;
+}
+
+/* Common Symptoms */
+.common-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+}
+
+.common-item {
+    display: grid;
+    grid-template-columns: 40px 1fr 60px 100px;
+    align-items: center;
+    gap: var(--spacing-3);
+    padding: var(--spacing-3);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+}
+
+.common-item .rank {
+    font-weight: 600;
+    color: var(--color-primary-500);
+}
+
+.common-item .name {
+    text-transform: capitalize;
+}
+
+.common-item .count {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+}
+
+.severity-bar {
+    height: 8px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.severity-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-success), var(--color-warning), var(--color-error));
+    border-radius: var(--radius-full);
+}
+
+/* Recommendations */
+.rec-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+}
+
+.rec-list li {
+    padding: var(--spacing-3) var(--spacing-4);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border-left: 3px solid var(--color-primary-500);
+}
+
+/* Recent Symptoms */
+.symptoms-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+}
+
+.symptom-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-3);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+}
+
+.symptom-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.symptom-type {
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.symptom-date {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+}
+
+.symptom-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+}
+
+.severity-badge {
+    padding: var(--spacing-1) var(--spacing-2);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+}
+
+.severity-1 {
+    background: var(--color-success-light);
+    color: var(--color-success);
+}
+
+.severity-2 {
+    background: var(--color-warning-light);
+    color: var(--color-warning);
+}
+
+.severity-3,
+.severity-4 {
+    background: var(--color-error-light);
+    color: var(--color-error);
+}
+
+.category-badge {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    text-transform: capitalize;
+}
+
+.empty-state {
+    text-align: center;
+    padding: var(--spacing-8);
+}
+
+.empty-state p {
+    margin-bottom: var(--spacing-4);
+}
+
+/* Modal Form */
+.category-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-2);
+    margin-bottom: var(--spacing-3);
+}
+
+.category-option {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-2) var(--spacing-3);
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-size: var(--font-size-sm);
+}
+
+.category-option:hover {
+    border-color: var(--color-primary-300);
+}
+
+.category-option.active {
+    border-color: var(--color-primary-500);
+    background: rgba(236, 72, 153, 0.1);
+}
+
+.symptom-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-2);
+    margin-bottom: var(--spacing-3);
+}
+
+.symptom-option {
+    padding: var(--spacing-2) var(--spacing-3);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-size: var(--font-size-sm);
+    text-transform: capitalize;
+}
+
+.symptom-option:hover {
+    border-color: var(--color-primary-300);
+}
+
+.symptom-option.active {
+    border-color: var(--color-primary-500);
+    background: var(--color-primary-100);
+    color: var(--color-primary-700);
+}
+
+.severity-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    background: linear-gradient(90deg, var(--color-success), var(--color-warning), var(--color-error));
+    border-radius: var(--radius-full);
+    outline: none;
+}
+
+.severity-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 2px solid var(--color-primary-500);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+}
+
+.severity-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    margin-top: var(--spacing-2);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .analysis-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .common-item {
+        grid-template-columns: 30px 1fr 50px;
+    }
+
+    .common-item .severity-bar {
+        display: none;
+    }
+}

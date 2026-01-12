@@ -1,0 +1,374 @@
+/* Dashboard Styles */
+
+.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-8);
+}
+
+.dashboard-header h1 {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-2);
+}
+
+.dashboard-header p {
+    color: var(--text-muted);
+    margin-bottom: 0;
+}
+
+.health-score-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-4);
+    background: linear-gradient(135deg,
+            rgba(236, 72, 153, 0.1),
+            rgba(139, 92, 246, 0.1));
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(236, 72, 153, 0.2);
+}
+
+.health-score-badge .pulse-icon {
+    color: var(--color-primary-500);
+    animation: pulse 2s infinite;
+}
+
+.health-score-badge .score {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.health-score-badge .label {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Grid Layout */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-6);
+}
+
+.skeleton-card {
+    min-height: 200px;
+}
+
+/* Cycle Card */
+.cycle-card {
+    background: var(--bg-card);
+}
+
+.cycle-card .card-body {
+    padding: var(--spacing-6);
+}
+
+.cycle-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-6);
+}
+
+.phase-icon {
+    padding: var(--spacing-2);
+    background: rgba(236, 72, 153, 0.1);
+    border-radius: var(--radius-lg);
+}
+
+.cycle-header h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-1);
+}
+
+.cycle-day {
+    color: var(--text-muted);
+    font-size: var(--font-size-sm);
+    margin-bottom: 0;
+}
+
+.cycle-progress {
+    margin-bottom: var(--spacing-4);
+}
+
+.progress-bar {
+    height: 8px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-primary-500), var(--color-secondary-500));
+    border-radius: var(--radius-full);
+    transition: width var(--transition-slow);
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--spacing-2);
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+}
+
+.cycle-info .info-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-2);
+}
+
+.phase-tip {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+.no-data-prompt {
+    text-align: center;
+    padding: var(--spacing-4) 0;
+}
+
+.no-data-prompt p {
+    margin-bottom: var(--spacing-4);
+}
+
+/* Risks Card */
+.risks-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.risks-card .card-header h3 {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: var(--font-size-lg);
+}
+
+.risk-gauges {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.risk-item {
+    padding: var(--spacing-3);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+}
+
+.risk-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-2);
+}
+
+.risk-name {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+}
+
+.risk-badge {
+    font-size: var(--font-size-xs);
+}
+
+.badge.risk-low {
+    background: var(--color-success-light);
+    color: var(--color-success);
+}
+
+.badge.risk-medium {
+    background: var(--color-warning-light);
+    color: var(--color-warning);
+}
+
+.badge.risk-high {
+    background: var(--color-error-light);
+    color: var(--color-error);
+}
+
+/* Actions Card */
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-3);
+    margin-bottom: var(--spacing-4);
+}
+
+.action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-4);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    transition: all var(--transition-fast);
+}
+
+.action-btn:hover {
+    background: linear-gradient(135deg,
+            rgba(236, 72, 153, 0.1),
+            rgba(139, 92, 246, 0.1));
+    color: var(--color-primary-600);
+    transform: translateY(-2px);
+}
+
+.streak-section {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    padding: var(--spacing-4);
+    background: linear-gradient(135deg,
+            rgba(251, 146, 60, 0.1),
+            rgba(251, 191, 36, 0.1));
+    border-radius: var(--radius-lg);
+}
+
+.streak-icon {
+    color: #f59e0b;
+}
+
+.streak-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.streak-count {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.streak-label {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+}
+
+/* Activity Card */
+.activity-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+}
+
+.activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-3);
+    padding: var(--spacing-3);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+}
+
+.activity-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-primary-100);
+    color: var(--color-primary-600);
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+}
+
+.activity-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-title {
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.activity-meta {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+}
+
+.empty-activity {
+    text-align: center;
+    padding: var(--spacing-6);
+    color: var(--text-muted);
+}
+
+.empty-activity p {
+    margin-bottom: var(--spacing-4);
+}
+
+.notifications-summary {
+    display: flex;
+    gap: var(--spacing-2);
+    flex-wrap: wrap;
+    margin-top: var(--spacing-4);
+}
+
+.notification-badge {
+    font-size: var(--font-size-sm);
+    color: var(--color-primary-600);
+    background: var(--color-primary-100);
+    padding: var(--spacing-2) var(--spacing-3);
+    border-radius: var(--radius-full);
+    text-decoration: none;
+}
+
+.notification-badge span {
+    font-weight: 600;
+}
+
+.btn-sm {
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: var(--font-size-xs);
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        gap: var(--spacing-4);
+    }
+
+    .health-score-badge {
+        flex-direction: row;
+        gap: var(--spacing-3);
+    }
+
+    .quick-actions {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-header h1 {
+        font-size: var(--font-size-2xl);
+    }
+}

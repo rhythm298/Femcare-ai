@@ -8,16 +8,23 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 import os
 
-# Database URL - SQLite for local privacy-first storage
-DATABASE_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
-os.makedirs(DATABASE_DIR, exist_ok=True)
-DATABASE_URL = f"sqlite:///{os.path.join(DATABASE_DIR, 'femcare.db')}"
+# Database URL - Read from env (for Render/Postgres) or fallback to SQLite (local)
+DATABASE_URL = os.getenv("DATABASE_URL")
+if not DATABASE_URL:
+    DATABASE_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
+    os.makedirs(DATABASE_DIR, exist_ok=True)
+    DATABASE_URL = f"sqlite:///{os.path.join(DATABASE_DIR, 'femcare.db')}"
 
-# Create engine with SQLite-specific settings
+# Handle Postgres URL format from Render (starts with postgres:// but SQLAlchemy needs postgresql://)
+if DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+
+# Create engine
+connect_args = {"check_same_thread": False} if "sqlite" in DATABASE_URL else {}
 engine = create_engine(
     DATABASE_URL,
-    connect_args={"check_same_thread": False},  # Needed for SQLite
-    echo=False  # Set to True for SQL debugging
+    connect_args=connect_args,
+    echo=False
 )
 
 # Session factory

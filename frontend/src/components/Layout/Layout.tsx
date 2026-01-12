@@ -116,6 +116,21 @@ export default function Layout() {
             <main className="main-content">
                 <Outlet />
             </main>
+
+            {/* Footer Credit */}
+            <footer className="app-footer">
+                <span>Made with </span>
+                <Heart className="footer-heart" size={16} />
+                <span> by </span>
+                <a
+                    href="https://www.linkedin.com/in/justrhythm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-link"
+                >
+                    Rhythm Mehta
+                </a>
+            </footer>
         </div>
     );
 }

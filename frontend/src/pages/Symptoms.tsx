@@ -45,7 +45,7 @@ export default function Symptoms() {
     const [description, setDescription] = useState('');
     const [selectedDate, setSelectedDate] = useState(format(new Date(), 'yyyy-MM-dd'));
 
-    const { data: symptoms = [], isLoading } = useQuery({
+    const { data: symptoms = [] } = useQuery({
         queryKey: ['symptoms'],
         queryFn: () => symptomsApi.getAll(),
     });

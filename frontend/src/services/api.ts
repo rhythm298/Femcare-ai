@@ -25,9 +25,12 @@ import type {
     DashboardSummary,
 } from '../types';
 
+// API base URL - uses environment variable in production, /api proxy for local dev
+const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
+
 // Create axios instance
 const api: AxiosInstance = axios.create({
-    baseURL: '/api',
+    baseURL: API_BASE_URL,
     headers: {
         'Content-Type': 'application/json',
     },

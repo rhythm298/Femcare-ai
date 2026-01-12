@@ -38,8 +38,13 @@ class Settings(BaseSettings):
     MIN_CONFIDENCE_FOR_ACTION: float = 0.7
     MIN_CYCLES_FOR_PREDICTION: int = 3
     
-    # CORS (allow all for local development)
-    CORS_ORIGINS: List[str] = ["http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:5173"]
+    # CORS - includes production Netlify domain and local development
+    CORS_ORIGINS: List[str] = [
+        "https://femcare-ai.netlify.app",
+        "http://localhost:5173", 
+        "http://localhost:3000", 
+        "http://127.0.0.1:5173"
+    ]
 
 
 # Global settings instance

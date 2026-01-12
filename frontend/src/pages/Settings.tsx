@@ -38,7 +38,7 @@ export default function Settings() {
     const [isOnBirthControl, setIsOnBirthControl] = useState(user?.is_on_birth_control || false);
 
     // Notifications
-    const [notificationsEnabled, setNotificationsEnabled] = useState(user?.notification_enabled || true);
+    const [notificationsEnabled, setNotificationsEnabled] = useState<boolean>(user?.notification_enabled ?? true);
     const [partnerSharing, setPartnerSharing] = useState(user?.partner_sharing_enabled || false);
 
     const updateMutation = useMutation({

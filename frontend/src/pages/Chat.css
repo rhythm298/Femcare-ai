@@ -291,3 +291,220 @@
         padding: var(--spacing-3) var(--spacing-4);
     }
 }
+
+/* Enhanced AI Avatar */
+.ai-avatar {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+}
+
+.online-dot {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 12px;
+    height: 12px;
+    background: #22c55e;
+    border: 2px solid white;
+    border-radius: 50%;
+    animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.status-text {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: #22c55e !important;
+    font-size: 0.8rem !important;
+}
+
+.status-text svg {
+    color: #22c55e;
+}
+
+/* Welcome Header */
+.welcome-header {
+    margin-bottom: 2rem;
+}
+
+.welcome-subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+/* Quick Actions Grid */
+.quick-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.quick-action-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0.5rem;
+    background: var(--bg-secondary);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.quick-action-card:hover {
+    border-color: var(--color-primary-400);
+    background: rgba(236, 72, 153, 0.05);
+}
+
+.quick-action-card.active {
+    border-color: var(--color-primary-500);
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+}
+
+.action-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.action-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+/* Expanded Questions */
+.expanded-questions {
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.expanded-questions h3 {
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-muted);
+}
+
+.question-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.question-btn {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.question-btn:hover {
+    border-color: var(--color-primary-400);
+    background: rgba(236, 72, 153, 0.05);
+}
+
+/* Smart Suggestions */
+.smart-suggestions {
+    margin-top: 1rem;
+}
+
+.smart-suggestions h3 {
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-muted);
+}
+
+.suggestion-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.suggestion-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+    border: 1px solid var(--color-primary-200);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--color-primary-600);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.suggestion-chip:hover {
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+}
+
+.suggestion-chip svg {
+    color: var(--color-primary-500);
+}
+
+/* Inline Quick Actions */
+.inline-quick-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border-color);
+}
+
+.inline-action {
+    padding: 0.4rem 0.75rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.inline-action:hover {
+    border-color: var(--color-primary-400);
+    color: var(--color-primary-600);
+}
+
+/* Mobile adjustments for new styles */
+@media (max-width: 480px) {
+    .quick-actions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .suggestion-chips {
+        flex-direction: column;
+    }
+
+    .inline-quick-actions {
+        flex-wrap: wrap;
+    }
+}

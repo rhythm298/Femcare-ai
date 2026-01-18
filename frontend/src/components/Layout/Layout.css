@@ -228,21 +228,21 @@
     }
 }
 
-/* App Footer Credit */
-.app-footer {
+/* Sidebar Credit */
+.nav-credit {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.35rem;
+    flex-wrap: wrap;
+    gap: 0.25rem;
     padding: var(--spacing-4);
-    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-4);
+    font-size: var(--font-size-xs);
     color: var(--text-muted);
-    background: var(--bg-card);
     border-top: 1px solid var(--border-color);
-    margin-left: 280px;
 }
 
-.footer-heart {
+.credit-heart {
     color: #ef4444;
     animation: heartbeat 1.5s ease-in-out infinite;
     fill: #ef4444;
@@ -260,7 +260,7 @@
     }
 }
 
-.footer-link {
+.credit-link {
     font-weight: 600;
     background: linear-gradient(135deg, var(--color-primary-500), var(--color-secondary-500));
     -webkit-background-clip: text;
@@ -270,7 +270,7 @@
     position: relative;
 }
 
-.footer-link::after {
+.credit-link::after {
     content: '';
     position: absolute;
     left: 0;
@@ -281,12 +281,6 @@
     transition: width var(--transition-normal);
 }
 
-.footer-link:hover::after {
+.credit-link:hover::after {
     width: 100%;
-}
-
-@media (max-width: 1024px) {
-    .app-footer {
-        margin-left: 0;
-    }
 }

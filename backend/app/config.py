@@ -29,6 +29,14 @@ class Settings(BaseSettings):
     OLLAMA_MODEL: str = "llama3.2:3b"
     USE_LOCAL_LLM: bool = True
     
+    # Gemini API Fallback (when Ollama is unavailable)
+    GEMINI_API_KEY: Optional[str] = None
+    GEMINI_MODEL: str = "gemini-1.5-flash"
+    
+    # Imagga API for Food Image Analysis (fallback when Ollama unavailable)
+    IMAGGA_API_KEY: Optional[str] = None
+    IMAGGA_API_SECRET: Optional[str] = None
+    
     # Risk Thresholds
     RISK_THRESHOLD_LOW: float = 0.3
     RISK_THRESHOLD_MEDIUM: float = 0.6

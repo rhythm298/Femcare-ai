@@ -1,0 +1,356 @@
+/* Fertility Tracker Page Styles */
+
+.fertility-page {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Loading & Empty States */
+.loading-state,
+.disabled-message,
+.no-data-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-12);
+    text-align: center;
+    gap: var(--spacing-4);
+}
+
+.disabled-message svg,
+.no-data-message svg {
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+.disabled-message h2,
+.no-data-message h2 {
+    margin-bottom: var(--spacing-2);
+}
+
+.disabled-message p,
+.no-data-message p {
+    color: var(--text-secondary);
+    max-width: 400px;
+}
+
+/* Today's Status */
+.today-status {
+    padding: var(--spacing-6);
+    margin-bottom: var(--spacing-6);
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(168, 85, 247, 0.1));
+}
+
+.status-main {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-4);
+}
+
+.status-emoji {
+    font-size: 3rem;
+}
+
+.status-info h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-1);
+}
+
+.status-message {
+    color: var(--text-secondary);
+}
+
+.status-badges {
+    display: flex;
+    gap: var(--spacing-2);
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-1);
+    padding: var(--spacing-1) var(--spacing-3);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+.fertile-badge {
+    background: linear-gradient(135deg, #fbbf24, #f97316);
+    color: white;
+}
+
+.pms-badge {
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    color: white;
+}
+
+/* Fertility Stats */
+.fertility-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-6);
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    padding: var(--spacing-4);
+    border-radius: var(--radius-xl);
+}
+
+.stat-icon {
+    padding: var(--spacing-2);
+    border-radius: var(--radius-lg);
+}
+
+.stat-icon.ovulation {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+}
+
+.stat-icon.period {
+    background: rgba(236, 72, 153, 0.15);
+    color: #ec4899;
+}
+
+.stat-icon.cycle {
+    background: rgba(251, 191, 36, 0.15);
+    color: #fbbf24;
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+}
+
+.stat-value {
+    font-weight: 600;
+    font-size: var(--font-size-base);
+}
+
+/* Fertility Calendar */
+.fertility-calendar {
+    margin-bottom: var(--spacing-6);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-4);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.calendar-header h3 {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+}
+
+.calendar-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+}
+
+.calendar-nav span {
+    min-width: 80px;
+    text-align: center;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--spacing-2);
+    padding: var(--spacing-4);
+}
+
+.calendar-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-3);
+    border-radius: var(--radius-lg);
+    background: var(--bg-secondary);
+    transition: all var(--transition-fast);
+}
+
+.calendar-day:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.calendar-day.today {
+    border: 2px solid var(--color-primary-500);
+    background: rgba(236, 72, 153, 0.1);
+}
+
+.calendar-day.ovulation {
+    background: rgba(239, 68, 68, 0.15);
+}
+
+.day-date {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-1);
+}
+
+.day-number {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--spacing-2);
+}
+
+.fertility-indicator {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin-bottom: var(--spacing-1);
+}
+
+.conception-chance {
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.cycle-day {
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-top: var(--spacing-1);
+}
+
+/* Legend */
+.fertility-legend {
+    margin-bottom: var(--spacing-6);
+}
+
+.fertility-legend h4 {
+    padding: var(--spacing-4);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.legend-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-3);
+    padding: var(--spacing-4);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: var(--font-size-sm);
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+
+/* Best Days */
+.best-days {
+    padding: var(--spacing-4);
+}
+
+.best-days h4 {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    color: var(--color-primary-500);
+    margin-bottom: var(--spacing-4);
+}
+
+.best-days-list {
+    display: flex;
+    gap: var(--spacing-3);
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-3);
+}
+
+.best-day {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-2) var(--spacing-4);
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.15), rgba(239, 68, 68, 0.15));
+    border-radius: var(--radius-full);
+    font-weight: 500;
+}
+
+.best-day svg {
+    color: #ef4444;
+}
+
+.best-days-note {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+}
+
+/* Loading Spinner */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--color-primary-500);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .fertility-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .calendar-grid {
+        gap: var(--spacing-1);
+        padding: var(--spacing-2);
+    }
+
+    .calendar-day {
+        padding: var(--spacing-2);
+    }
+
+    .day-number {
+        font-size: var(--font-size-base);
+    }
+
+    .fertility-indicator {
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+    }
+
+    .legend-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .status-emoji {
+        font-size: 2rem;
+    }
+}

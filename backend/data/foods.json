@@ -1,0 +1,1000 @@
+[
+    {
+        "name": "Apple",
+        "category": "fruits",
+        "calories_per_100g": 52,
+        "protein_g": 0.3,
+        "carbs_g": 14,
+        "fat_g": 0.2,
+        "fiber_g": 2.4,
+        "serving_size_g": 182,
+        "serving_description": "1 medium",
+        "period_phase_benefit": {
+            "follicular": "High in fiber, supports digestion"
+        }
+    },
+    {
+        "name": "Banana",
+        "category": "fruits",
+        "calories_per_100g": 89,
+        "protein_g": 1.1,
+        "carbs_g": 23,
+        "fat_g": 0.3,
+        "fiber_g": 2.6,
+        "serving_size_g": 118,
+        "serving_description": "1 medium",
+        "period_phase_benefit": {
+            "menstrual": "Rich in potassium, helps with cramps",
+            "luteal": "Helps with mood stabilization"
+        }
+    },
+    {
+        "name": "Orange",
+        "category": "fruits",
+        "calories_per_100g": 47,
+        "protein_g": 0.9,
+        "carbs_g": 12,
+        "fat_g": 0.1,
+        "fiber_g": 2.4,
+        "serving_size_g": 131,
+        "serving_description": "1 medium",
+        "period_phase_benefit": {
+            "menstrual": "Vitamin C boosts iron absorption"
+        }
+    },
+    {
+        "name": "Strawberries",
+        "category": "fruits",
+        "calories_per_100g": 32,
+        "protein_g": 0.7,
+        "carbs_g": 8,
+        "fat_g": 0.3,
+        "fiber_g": 2,
+        "serving_size_g": 144,
+        "serving_description": "1 cup",
+        "period_phase_benefit": {}
+    },
+    {
+        "name": "Blueberries",
+        "category": "fruits",
+        "calories_per_100g": 57,
+        "protein_g": 0.7,
+        "carbs_g": 14,
+        "fat_g": 0.3,
+        "fiber_g": 2.4,
+        "serving_size_g": 148,
+        "serving_description": "1 cup",
+        "period_phase_benefit": {
+            "ovulation": "Antioxidants support reproductive health"
+        }
+    },
+    {
+        "name": "Mango",
+        "category": "fruits",
+        "calories_per_100g": 60,
+        "protein_g": 0.8,
+        "carbs_g": 15,
+        "fat_g": 0.4,
+        "fiber_g": 1.6,
+        "serving_size_g": 165,
+        "serving_description": "1 cup sliced",
+        "period_phase_benefit": {}
+    },
+    {
+        "name": "Grapes",
+        "category": "fruits",
+        "calories_per_100g": 69,
+        "protein_g": 0.7,
+        "carbs_g": 18,
+        "fat_g": 0.2,
+        "fiber_g": 0.9,
+        "serving_size_g": 151,
+        "serving_description": "1 cup",
+        "period_phase_benefit": {}
+    },
+    {
+        "name": "Watermelon",
+        "category": "fruits",
+        "calories_per_100g": 30,
+        "protein_g": 0.6,
+        "carbs_g": 8,
+        "fat_g": 0.2,
+        "fiber_g": 0.4,
+        "serving_size_g": 154,
+        "serving_description": "1 cup diced",
+        "period_phase_benefit": {
+            "menstrual": "High water content reduces bloating"
+        }
+    },
+    {
+        "name": "Papaya",
+        "category": "fruits",
+        "calories_per_100g": 43,
+        "protein_g": 0.5,
+        "carbs_g": 11,
+        "fat_g": 0.3,
+        "fiber_g": 1.7,
+        "serving_size_g": 145,
+        "serving_description": "1 cup",
+        "period_phase_benefit": {
+            "menstrual": "Contains papain enzyme, aids digestion"
+        }
+    },
+    {
+        "name": "Pomegranate",
+        "category": "fruits",
+        "calories_per_100g": 83,
+        "protein_g": 1.7,
+        "carbs_g": 19,
+        "fat_g": 1.2,
+        "fiber_g": 4,
+        "serving_size_g": 174,
+        "serving_description": "1 cup seeds",
+        "period_phase_benefit": {
+            "menstrual": "Rich in iron, helps replenish blood"
+        }
+    },
+    {
+        "name": "Spinach",
+        "category": "vegetables",
+        "calories_per_100g": 23,
+        "protein_g": 2.9,
+        "carbs_g": 3.6,
+        "fat_g": 0.4,
+        "fiber_g": 2.2,
+        "serving_size_g": 30,
+        "serving_description": "1 cup raw",
+        "period_phase_benefit": {
+            "menstrual": "Iron-rich, combats fatigue and blood loss"
+        }
+    },
+    {
+        "name": "Broccoli",
+        "category": "vegetables",
+        "calories_per_100g": 34,
+        "protein_g": 2.8,
+        "carbs_g": 7,
+        "fat_g": 0.4,
+        "fiber_g": 2.6,
+        "serving_size_g": 91,
+        "serving_description": "1 cup chopped",
+        "period_phase_benefit": {
+            "luteal": "Fiber helps with digestive issues"
+        }
+    },
+    {
+        "name": "Carrot",
+        "category": "vegetables",
+        "calories_per_100g": 41,
+        "protein_g": 0.9,
+        "carbs_g": 10,
+        "fat_g": 0.2,
+        "fiber_g": 2.8,
+        "serving_size_g": 61,
+        "serving_description": "1 medium",
+        "period_phase_benefit": {}
+    },
+    {
+        "name": "Tomato",
+        "category": "vegetables",
+        "calories_per_100g": 18,
+        "protein_g": 0.9,
+        "carbs_g": 3.9,
+        "fat_g": 0.2,
+        "fiber_g": 1.2,
+        "serving_size_g": 123,
+        "serving_description": "1 medium",
+        "period_phase_benefit": {}
+    },
+    {
+        "name": "Cucumber",
+        "category": "vegetables",
+        "calories_per_100g": 15,
+        "protein_g": 0.7,
+        "carbs_g": 3.6,
+        "fat_g": 0.1,
+        "fiber_g": 0.5,
+        "serving_size_g": 52,
+        "serving_description": "1/2 cup sliced",
+        "period_phase_benefit": {
+            "menstrual": "Hydrating, reduces bloating"
+        }
+    },
+    {
+        "name": "Bell Pepper",
+        "category": "vegetables",
+        "calories_per_100g": 31,
+        "protein_g": 1,
+        "carbs_g": 6,
+        "fat_g": 0.3,
+        "fiber_g": 2.1,
+        "serving_size_g": 119,
+        "serving_description": "1 medium",
+        "period_phase_benefit": {}
+    },
+    {
+        "name": "Sweet Potato",
+        "category": "vegetables",
+        "calories_per_100g": 86,
+        "protein_g": 1.6,
+        "carbs_g": 20,
+        "fat_g": 0.1,
+        "fiber_g": 3,
+        "serving_size_g": 130,
+        "serving_description": "1 medium",
+        "period_phase_benefit": {
+            "luteal": "Complex carbs help with mood swings"
+        }
+    },
+    {
+        "name": "Kale",
+        "category": "vegetables",
+        "calories_per_100g": 49,
+        "protein_g": 4.3,
+        "carbs_g": 9,
+        "fat_g": 0.9,
+        "fiber_g": 3.6,
+        "serving_size_g": 67,
+        "serving_description": "1 cup chopped",
+        "period_phase_benefit": {
+            "menstrual": "High in iron and calcium"
+        }
+    },
+    {
+        "name": "Cauliflower",
+        "category": "vegetables",
+        "calories_per_100g": 25,
+        "protein_g": 1.9,
+        "carbs_g": 5,
+        "fat_g": 0.3,
+        "fiber_g": 2,
+        "serving_size_g": 100,
+        "serving_description": "1 cup",
+        "period_phase_benefit": {}
+    },
+    {
+        "name": "Green Beans",
+        "category": "vegetables",
+        "calories_per_100g": 31,
+        "protein_g": 1.8,
+        "carbs_g": 7,
+        "fat_g": 0.2,
+        "fiber_g": 2.7,
+        "serving_size_g": 100,
+        "serving_description": "1 cup",
+        "period_phase_benefit": {}
+    },
+    {
+        "name": "Chicken Breast",
+        "category": "proteins",
+        "calories_per_100g": 165,
+        "protein_g": 31,
+        "carbs_g": 0,
+        "fat_g": 3.6,
+        "fiber_g": 0,
+        "serving_size_g": 140,
+        "serving_description": "1 breast",
+        "period_phase_benefit": {
+            "menstrual": "Lean protein supports energy levels"
+        }
+    },
+    {
+        "name": "Salmon",
+        "category": "proteins",
+        "calories_per_100g": 208,
+        "protein_g": 20,
+        "carbs_g": 0,
+        "fat_g": 13,
+        "fiber_g": 0,
+        "serving_size_g": 113,
+        "serving_description": "1 fillet",
+        "period_phase_benefit": {
+            "menstrual": "Omega-3 reduces inflammation and cramps",
+            "luteal": "Helps with PMS symptoms"
+        }
+    },
+    {
+        "name": "Eggs",
+        "category": "proteins",
+        "calories_per_100g": 155,
+        "protein_g": 13,
+        "carbs_g": 1.1,
+        "fat_g": 11,
+        "fiber_g": 0,
+        "serving_size_g": 50,
+        "serving_description": "1 large egg",
+        "period_phase_benefit": {
+            "menstrual": "B vitamins support energy",
+            "ovulation": "Supports hormone production"
+        }
+    },
+    {
+        "name": "Lentils",
+        "category": "proteins",
+        "calories_per_100g": 116,
+        "protein_g": 9,
+        "carbs_g": 20,
+        "fat_g": 0.4,
+        "fiber_g": 8,
+        "serving_size_g": 198,
+        "serving_description": "1 cup cooked",
+        "period_phase_benefit": {
+            "menstrual": "Iron and protein rich, plant-based"
+        }
+    },
+    {
+        "name": "Chickpeas",
+        "category": "proteins",
+        "calories_per_100g": 164,
+        "protein_g": 9,
+        "carbs_g": 27,
+        "fat_g": 2.6,
+        "fiber_g": 7.6,
+        "serving_size_g": 164,
+        "serving_description": "1 cup cooked",
+        "period_phase_benefit": {
+            "menstrual": "High in iron and B vitamins"
+        }
+    },
+    {
+        "name": "Tofu",
+        "category": "proteins",
+        "calories_per_100g": 76,
+        "protein_g": 8,
+        "carbs_g": 1.9,
+        "fat_g": 4.8,
+        "fiber_g": 0.3,
+        "serving_size_g": 126,
+        "serving_description": "1/2 cup",
+        "period_phase_benefit": {
+            "luteal": "Plant estrogens may help with PMS"
+        }
+    },
+    {
+        "name": "Greek Yogurt",
+        "category": "proteins",
+        "calories_per_100g": 59,
+        "protein_g": 10,
+        "carbs_g": 3.6,
+        "fat_g": 0.7,
+        "fiber_g": 0,
+        "serving_size_g": 170,
+        "serving_description": "1 container",
+        "period_phase_benefit": {
+            "menstrual": "Calcium helps with cramps",
+            "luteal": "Probiotics support gut health"
+        }
+    },
+    {
+        "name": "Tuna",
+        "category": "proteins",
+        "calories_per_100g": 132,
+        "protein_g": 28,
+        "carbs_g": 0,
+        "fat_g": 1,
+        "fiber_g": 0,
+        "serving_size_g": 85,
+        "serving_description": "1 can drained",
+        "period_phase_benefit": {}
+    },
+    {
+        "name": "Paneer",
+        "category": "proteins",
+        "calories_per_100g": 265,
+        "protein_g": 18,
+        "carbs_g": 1.2,
+        "fat_g": 21,
+        "fiber_g": 0,
+        "serving_size_g": 100,
+        "serving_description": "100g cube",
+        "period_phase_benefit": {
+            "menstrual": "Calcium and protein rich"
+        }
+    },
+    {
+        "name": "Dal (Lentil Soup)",
+        "category": "proteins",
+        "calories_per_100g": 100,
+        "protein_g": 7,
+        "carbs_g": 13,
+        "fat_g": 2,
+        "fiber_g": 4,
+        "serving_size_g": 200,
+        "serving_description": "1 bowl",
+        "period_phase_benefit": {
+            "menstrual": "Iron and protein for energy"
+        }
+    },
+    {
+        "name": "Brown Rice",
+        "category": "grains",
+        "calories_per_100g": 111,
+        "protein_g": 2.6,
+        "carbs_g": 23,
+        "fat_g": 0.9,
+        "fiber_g": 1.8,
+        "serving_size_g": 195,
+        "serving_description": "1 cup cooked",
+        "period_phase_benefit": {
+            "luteal": "Complex carbs stabilize blood sugar"
+        }
+    },
+    {
+        "name": "Quinoa",
+        "category": "grains",
+        "calories_per_100g": 120,
+        "protein_g": 4.4,
+        "carbs_g": 21,
+        "fat_g": 1.9,
+        "fiber_g": 2.8,
+        "serving_size_g": 185,
+        "serving_description": "1 cup cooked",
+        "period_phase_benefit": {
+            "menstrual": "Complete protein with iron"
+        }
+    },
+    {
+        "name": "Oats",
+        "category": "grains",
+        "calories_per_100g": 389,
+        "protein_g": 17,
+        "carbs_g": 66,
+        "fat_g": 7,
+        "fiber_g": 11,
+        "serving_size_g": 40,
+        "serving_description": "1/2 cup dry",
+        "period_phase_benefit": {
+            "menstrual": "B vitamins and iron",
+            "luteal": "Fiber helps with bloating"
+        }
+    },
+    {
+        "name": "Whole Wheat Bread",
+        "category": "grains",
+        "calories_per_100g": 247,
+        "protein_g": 13,
+        "carbs_g": 41,
+        "fat_g": 4,
+        "fiber_g": 7,
+        "serving_size_g": 43,
+        "serving_description": "1 slice",
+        "period_phase_benefit": {}
+    },
+    {
+        "name": "White Rice",
+        "category": "grains",
+        "calories_per_100g": 130,
+        "protein_g": 2.7,
+        "carbs_g": 28,
+        "fat_g": 0.3,
+        "fiber_g": 0.4,
+        "serving_size_g": 186,
+        "serving_description": "1 cup cooked",
+        "period_phase_benefit": {}
+    },
+    {
+        "name": "Roti (Wheat Flatbread)",
+        "category": "grains",
+        "calories_per_100g": 297,
+        "protein_g": 10,
+        "carbs_g": 50,
+        "fat_g": 6,
+        "fiber_g": 4,
+        "serving_size_g": 40,
+        "serving_description": "1 roti",
+        "period_phase_benefit": {}
+    },
+    {
+        "name": "Pasta",
+        "category": "grains",
+        "calories_per_100g": 131,
+        "protein_g": 5,
+        "carbs_g": 25,
+        "fat_g": 1.1,
+        "fiber_g": 1.8,
+        "serving_size_g": 140,
+        "serving_description": "1 cup cooked",
+        "period_phase_benefit": {}
+    },
+    {
+        "name": "Poha (Flattened Rice)",
+        "category": "grains",
+        "calories_per_100g": 110,
+        "protein_g": 2,
+        "carbs_g": 23,
+        "fat_g": 0.5,
+        "fiber_g": 1,
+        "serving_size_g": 150,
+        "serving_description": "1 bowl",
+        "period_phase_benefit": {
+            "menstrual": "Light and easy to digest"
+        }
+    },
+    {
+        "name": "Milk",
+        "category": "dairy",
+        "calories_per_100g": 42,
+        "protein_g": 3.4,
+        "carbs_g": 5,
+        "fat_g": 1,
+        "fiber_g": 0,
+        "serving_size_g": 244,
+        "serving_description": "1 cup",
+        "period_phase_benefit": {
+            "menstrual": "Calcium helps reduce cramps"
+        }
+    },
+    {
+        "name": "Cheese",
+        "category": "dairy",
+        "calories_per_100g": 402,
+        "protein_g": 25,
+        "carbs_g": 1.3,
+        "fat_g": 33,
+        "fiber_g": 0,
+        "serving_size_g": 28,
+        "serving_description": "1 oz",
+        "period_phase_benefit": {}
+    },
+    {
+        "name": "Cottage Cheese",
+        "category": "dairy",
+        "calories_per_100g": 98,
+        "protein_g": 11,
+        "carbs_g": 3.4,
+        "fat_g": 4.3,
+        "fiber_g": 0,
+        "serving_size_g": 113,
+        "serving_description": "1/2 cup",
+        "period_phase_benefit": {}
+    },
+    {
+        "name": "Buttermilk",
+        "category": "dairy",
+        "calories_per_100g": 40,
+        "protein_g": 3.3,
+        "carbs_g": 4.8,
+        "fat_g": 0.9,
+        "fiber_g": 0,
+        "serving_size_g": 245,
+        "serving_description": "1 cup",
+        "period_phase_benefit": {
+            "menstrual": "Cooling, aids digestion"
+        }
+    },
+    {
+        "name": "Curd/Yogurt",
+        "category": "dairy",
+        "calories_per_100g": 61,
+        "protein_g": 3.5,
+        "carbs_g": 4.7,
+        "fat_g": 3.3,
+        "fiber_g": 0,
+        "serving_size_g": 150,
+        "serving_description": "1 cup",
+        "period_phase_benefit": {
+            "menstrual": "Probiotics support gut health"
+        }
+    },
+    {
+        "name": "Almonds",
+        "category": "nuts_seeds",
+        "calories_per_100g": 579,
+        "protein_g": 21,
+        "carbs_g": 22,
+        "fat_g": 50,
+        "fiber_g": 12,
+        "serving_size_g": 28,
+        "serving_description": "1 oz (23 almonds)",
+        "period_phase_benefit": {
+            "menstrual": "Magnesium helps with cramps",
+            "luteal": "Vitamin E for PMS"
+        }
+    },
+    {
+        "name": "Walnuts",
+        "category": "nuts_seeds",
+        "calories_per_100g": 654,
+        "protein_g": 15,
+        "carbs_g": 14,
+        "fat_g": 65,
+        "fiber_g": 7,
+        "serving_size_g": 28,
+        "serving_description": "1 oz",
+        "period_phase_benefit": {
+            "menstrual": "Omega-3 reduces inflammation"
+        }
+    },
+    {
+        "name": "Peanuts",
+        "category": "nuts_seeds",
+        "calories_per_100g": 567,
+        "protein_g": 26,
+        "carbs_g": 16,
+        "fat_g": 49,
+        "fiber_g": 8.5,
+        "serving_size_g": 28,
+        "serving_description": "1 oz",
+        "period_phase_benefit": {}
+    },
+    {
+        "name": "Chia Seeds",
+        "category": "nuts_seeds",
+        "calories_per_100g": 486,
+        "protein_g": 17,
+        "carbs_g": 42,
+        "fat_g": 31,
+        "fiber_g": 34,
+        "serving_size_g": 28,
+        "serving_description": "2 tbsp",
+        "period_phase_benefit": {
+            "menstrual": "Omega-3 and fiber rich"
+        }
+    },
+    {
+        "name": "Flax Seeds",
+        "category": "nuts_seeds",
+        "calories_per_100g": 534,
+        "protein_g": 18,
+        "carbs_g": 29,
+        "fat_g": 42,
+        "fiber_g": 27,
+        "serving_size_g": 10,
+        "serving_description": "1 tbsp",
+        "period_phase_benefit": {
+            "luteal": "Lignans help balance hormones"
+        }
+    },
+    {
+        "name": "Pumpkin Seeds",
+        "category": "nuts_seeds",
+        "calories_per_100g": 559,
+        "protein_g": 30,
+        "carbs_g": 11,
+        "fat_g": 49,
+        "fiber_g": 6,
+        "serving_size_g": 28,
+        "serving_description": "1 oz",
+        "period_phase_benefit": {
+            "menstrual": "Zinc and iron rich"
+        }
+    },
+    {
+        "name": "Dark Chocolate",
+        "category": "snacks",
+        "calories_per_100g": 598,
+        "protein_g": 8,
+        "carbs_g": 46,
+        "fat_g": 43,
+        "fiber_g": 11,
+        "serving_size_g": 28,
+        "serving_description": "1 oz",
+        "period_phase_benefit": {
+            "menstrual": "Magnesium and mood boost",
+            "luteal": "Satisfies cravings, contains iron"
+        }
+    },
+    {
+        "name": "Dates",
+        "category": "snacks",
+        "calories_per_100g": 277,
+        "protein_g": 1.8,
+        "carbs_g": 75,
+        "fat_g": 0.2,
+        "fiber_g": 7,
+        "serving_size_g": 24,
+        "serving_description": "3 dates",
+        "period_phase_benefit": {
+            "menstrual": "Natural iron and energy boost"
+        }
+    },
+    {
+        "name": "Banana Chips",
+        "category": "snacks",
+        "calories_per_100g": 519,
+        "protein_g": 2,
+        "carbs_g": 58,
+        "fat_g": 34,
+        "fiber_g": 7,
+        "serving_size_g": 28,
+        "serving_description": "1 oz",
+        "period_phase_benefit": {}
+    },
+    {
+        "name": "Granola Bar",
+        "category": "snacks",
+        "calories_per_100g": 471,
+        "protein_g": 8,
+        "carbs_g": 64,
+        "fat_g": 20,
+        "fiber_g": 5,
+        "serving_size_g": 35,
+        "serving_description": "1 bar",
+        "period_phase_benefit": {}
+    },
+    {
+        "name": "Hummus",
+        "category": "snacks",
+        "calories_per_100g": 166,
+        "protein_g": 8,
+        "carbs_g": 14,
+        "fat_g": 10,
+        "fiber_g": 6,
+        "serving_size_g": 62,
+        "serving_description": "1/4 cup",
+        "period_phase_benefit": {
+            "menstrual": "Iron from chickpeas"
+        }
+    },
+    {
+        "name": "Green Tea",
+        "category": "beverages",
+        "calories_per_100g": 1,
+        "protein_g": 0,
+        "carbs_g": 0,
+        "fat_g": 0,
+        "fiber_g": 0,
+        "serving_size_g": 240,
+        "serving_description": "1 cup",
+        "period_phase_benefit": {
+            "menstrual": "Antioxidants, mild caffeine"
+        }
+    },
+    {
+        "name": "Ginger Tea",
+        "category": "beverages",
+        "calories_per_100g": 2,
+        "protein_g": 0,
+        "carbs_g": 0.5,
+        "fat_g": 0,
+        "fiber_g": 0,
+        "serving_size_g": 240,
+        "serving_description": "1 cup",
+        "period_phase_benefit": {
+            "menstrual": "Reduces nausea and cramps"
+        }
+    },
+    {
+        "name": "Coconut Water",
+        "category": "beverages",
+        "calories_per_100g": 19,
+        "protein_g": 0.7,
+        "carbs_g": 4,
+        "fat_g": 0.2,
+        "fiber_g": 1,
+        "serving_size_g": 240,
+        "serving_description": "1 cup",
+        "period_phase_benefit": {
+            "menstrual": "Hydrating, replenishes electrolytes"
+        }
+    },
+    {
+        "name": "Orange Juice",
+        "category": "beverages",
+        "calories_per_100g": 45,
+        "protein_g": 0.7,
+        "carbs_g": 10,
+        "fat_g": 0.2,
+        "fiber_g": 0.2,
+        "serving_size_g": 240,
+        "serving_description": "1 cup",
+        "period_phase_benefit": {
+            "menstrual": "Vitamin C aids iron absorption"
+        }
+    },
+    {
+        "name": "Chamomile Tea",
+        "category": "beverages",
+        "calories_per_100g": 1,
+        "protein_g": 0,
+        "carbs_g": 0.2,
+        "fat_g": 0,
+        "fiber_g": 0,
+        "serving_size_g": 240,
+        "serving_description": "1 cup",
+        "period_phase_benefit": {
+            "menstrual": "Calming, helps with cramps",
+            "luteal": "Reduces anxiety and aids sleep"
+        }
+    },
+    {
+        "name": "Avocado",
+        "category": "fruits",
+        "calories_per_100g": 160,
+        "protein_g": 2,
+        "carbs_g": 9,
+        "fat_g": 15,
+        "fiber_g": 7,
+        "serving_size_g": 150,
+        "serving_description": "1 whole",
+        "period_phase_benefit": {
+            "luteal": "Healthy fats support hormone balance"
+        }
+    },
+    {
+        "name": "Ghee",
+        "category": "fats",
+        "calories_per_100g": 900,
+        "protein_g": 0,
+        "carbs_g": 0,
+        "fat_g": 100,
+        "fiber_g": 0,
+        "serving_size_g": 14,
+        "serving_description": "1 tbsp",
+        "period_phase_benefit": {
+            "menstrual": "Aids nutrient absorption"
+        }
+    },
+    {
+        "name": "Olive Oil",
+        "category": "fats",
+        "calories_per_100g": 884,
+        "protein_g": 0,
+        "carbs_g": 0,
+        "fat_g": 100,
+        "fiber_g": 0,
+        "serving_size_g": 14,
+        "serving_description": "1 tbsp",
+        "period_phase_benefit": {}
+    },
+    {
+        "name": "Honey",
+        "category": "sweeteners",
+        "calories_per_100g": 304,
+        "protein_g": 0.3,
+        "carbs_g": 82,
+        "fat_g": 0,
+        "fiber_g": 0,
+        "serving_size_g": 21,
+        "serving_description": "1 tbsp",
+        "period_phase_benefit": {
+            "menstrual": "Natural energy boost"
+        }
+    },
+    {
+        "name": "Jaggery",
+        "category": "sweeteners",
+        "calories_per_100g": 383,
+        "protein_g": 0.4,
+        "carbs_g": 98,
+        "fat_g": 0.1,
+        "fiber_g": 0,
+        "serving_size_g": 20,
+        "serving_description": "1 tbsp",
+        "period_phase_benefit": {
+            "menstrual": "Iron-rich natural sweetener"
+        }
+    },
+    {
+        "name": "Idli",
+        "category": "indian",
+        "calories_per_100g": 77,
+        "protein_g": 2,
+        "carbs_g": 15,
+        "fat_g": 0.4,
+        "fiber_g": 0.8,
+        "serving_size_g": 60,
+        "serving_description": "2 idlis",
+        "period_phase_benefit": {
+            "menstrual": "Light, easy to digest"
+        }
+    },
+    {
+        "name": "Dosa",
+        "category": "indian",
+        "calories_per_100g": 168,
+        "protein_g": 4,
+        "carbs_g": 28,
+        "fat_g": 4,
+        "fiber_g": 1,
+        "serving_size_g": 100,
+        "serving_description": "1 dosa",
+        "period_phase_benefit": {}
+    },
+    {
+        "name": "Upma",
+        "category": "indian",
+        "calories_per_100g": 150,
+        "protein_g": 4,
+        "carbs_g": 25,
+        "fat_g": 4,
+        "fiber_g": 2,
+        "serving_size_g": 150,
+        "serving_description": "1 bowl",
+        "period_phase_benefit": {}
+    },
+    {
+        "name": "Khichdi",
+        "category": "indian",
+        "calories_per_100g": 105,
+        "protein_g": 4,
+        "carbs_g": 18,
+        "fat_g": 2,
+        "fiber_g": 2,
+        "serving_size_g": 200,
+        "serving_description": "1 bowl",
+        "period_phase_benefit": {
+            "menstrual": "Comfort food, easy to digest"
+        }
+    },
+    {
+        "name": "Sambar",
+        "category": "indian",
+        "calories_per_100g": 45,
+        "protein_g": 2,
+        "carbs_g": 7,
+        "fat_g": 1,
+        "fiber_g": 2,
+        "serving_size_g": 150,
+        "serving_description": "1 bowl",
+        "period_phase_benefit": {
+            "menstrual": "Vegetables and lentils for nutrition"
+        }
+    },
+    {
+        "name": "Paratha",
+        "category": "indian",
+        "calories_per_100g": 260,
+        "protein_g": 5,
+        "carbs_g": 32,
+        "fat_g": 13,
+        "fiber_g": 2,
+        "serving_size_g": 80,
+        "serving_description": "1 paratha",
+        "period_phase_benefit": {}
+    },
+    {
+        "name": "Biryani",
+        "category": "indian",
+        "calories_per_100g": 142,
+        "protein_g": 4,
+        "carbs_g": 18,
+        "fat_g": 6,
+        "fiber_g": 0.5,
+        "serving_size_g": 250,
+        "serving_description": "1 serving",
+        "period_phase_benefit": {}
+    },
+    {
+        "name": "Rajma (Kidney Beans)",
+        "category": "indian",
+        "calories_per_100g": 127,
+        "protein_g": 9,
+        "carbs_g": 23,
+        "fat_g": 0.5,
+        "fiber_g": 7,
+        "serving_size_g": 180,
+        "serving_description": "1 bowl",
+        "period_phase_benefit": {
+            "menstrual": "Iron and protein rich"
+        }
+    },
+    {
+        "name": "Chole (Chickpea Curry)",
+        "category": "indian",
+        "calories_per_100g": 135,
+        "protein_g": 7,
+        "carbs_g": 18,
+        "fat_g": 4,
+        "fiber_g": 5,
+        "serving_size_g": 180,
+        "serving_description": "1 bowl",
+        "period_phase_benefit": {
+            "menstrual": "Iron and fiber rich"
+        }
+    },
+    {
+        "name": "Palak Paneer",
+        "category": "indian",
+        "calories_per_100g": 150,
+        "protein_g": 8,
+        "carbs_g": 5,
+        "fat_g": 12,
+        "fiber_g": 2,
+        "serving_size_g": 150,
+        "serving_description": "1 serving",
+        "period_phase_benefit": {
+            "menstrual": "Iron from spinach, protein from paneer"
+        }
+    }
+]

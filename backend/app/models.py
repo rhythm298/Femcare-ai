@@ -321,3 +321,302 @@ class EducationArticle(Base):
     # Timestamps
     created_at = Column(DateTime, default=func.now())
     updated_at = Column(DateTime, default=func.now(), onupdate=func.now())
+
+
+# ============== Activity & Exercise Models ==============
+
+class Exercise(Base):
+    """Exercise database with period-phase recommendations"""
+    __tablename__ = "exercises"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String(200), nullable=False)
+    category = Column(String(100), nullable=False)  # yoga, cardio, strength, stretching, swimming, pilates
+    intensity_level = Column(String(50), default="low")  # low, medium, high
+    duration_minutes = Column(Integer, default=30)
+    
+    # Period phase suitability
+    suitable_phases = Column(JSON, default=list)  # ["menstrual", "follicular", "ovulation", "luteal"]
+    
+    # Details
+    description = Column(Text, nullable=True)
+    benefits = Column(Text, nullable=True)
+    instructions = Column(JSON, default=list)  # Step-by-step instructions
+    
+    # YouTube integration
+    youtube_search_query = Column(String(300), nullable=True)
+    youtube_video_id = Column(String(50), nullable=True)  # Curated video ID
+    youtube_video_title = Column(String(300), nullable=True)
+    
+    # Calories
+    calories_per_minute = Column(Float, default=5.0)
+    
+    # Image reference
+    image_url = Column(String(500), nullable=True)
+    
+    # Timestamps
+    created_at = Column(DateTime, default=func.now())
+
+
+class ExerciseLog(Base):
+    """User exercise logging"""
+    __tablename__ = "exercise_logs"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    exercise_id = Column(Integer, ForeignKey("exercises.id"), nullable=True)
+    
+    # Exercise details
+    exercise_name = Column(String(200), nullable=False)  # Store name for custom exercises
+    date = Column(Date, nullable=False)
+    duration_minutes = Column(Integer, nullable=False)
+    calories_burned = Column(Float, nullable=True)
+    
+    # Additional info
+    intensity = Column(String(50), nullable=True)
+    notes = Column(Text, nullable=True)
+    youtube_video_watched = Column(String(100), nullable=True)  # Video ID if watched
+    
+    # Rating
+    difficulty_rating = Column(Integer, nullable=True)  # 1-5
+    enjoyment_rating = Column(Integer, nullable=True)  # 1-5
+    
+    # Timestamps
+    created_at = Column(DateTime, default=func.now())
+
+
+# ============== Nutrition & Calorie Models ==============
+
+class FoodItem(Base):
+    """Food database with nutritional info"""
+    __tablename__ = "food_items"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String(200), nullable=False)
+    category = Column(String(100), nullable=False)  # fruits, vegetables, proteins, dairy, grains, snacks, beverages
+    
+    # Nutritional info per 100g
+    calories_per_100g = Column(Float, nullable=False)
+    protein_g = Column(Float, default=0)
+    carbs_g = Column(Float, default=0)
+    fat_g = Column(Float, default=0)
+    fiber_g = Column(Float, default=0)
+    
+    # Serving info
+    serving_size_g = Column(Float, default=100)
+    serving_description = Column(String(100), nullable=True)  # "1 cup", "1 medium", etc.
+    
+    # Period phase benefits
+    period_phase_benefit = Column(JSON, default=dict)  # {"menstrual": "Iron-rich, helps with fatigue"}
+    
+    # Custom items
+    is_custom = Column(Boolean, default=False)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=True)  # Only for custom items
+    
+    # Timestamps
+    created_at = Column(DateTime, default=func.now())
+
+
+class CalorieLog(Base):
+    """Daily calorie logging"""
+    __tablename__ = "calorie_logs"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    food_item_id = Column(Integer, ForeignKey("food_items.id"), nullable=True)
+    
+    # Log details
+    food_name = Column(String(200), nullable=False)  # Store name for flexibility
+    date = Column(Date, nullable=False)
+    quantity_grams = Column(Float, nullable=False)
+    meal_type = Column(String(50), nullable=False)  # breakfast, lunch, dinner, snack
+    
+    # Calculated nutrition
+    total_calories = Column(Float, nullable=False)
+    total_protein = Column(Float, default=0)
+    total_carbs = Column(Float, default=0)
+    total_fat = Column(Float, default=0)
+    
+    # Additional info
+    notes = Column(Text, nullable=True)
+    photo_path = Column(String(500), nullable=True)
+    
+    # Timestamps
+    created_at = Column(DateTime, default=func.now())
+
+
+class FoodAnalysis(Base):
+    """AI food photo analysis results"""
+    __tablename__ = "food_analyses"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    
+    # Photo info
+    photo_path = Column(String(500), nullable=False)
+    
+    # Analysis results
+    analysis_result = Column(JSON, default=dict)
+    detected_foods = Column(JSON, default=list)  # List of detected food items
+    estimated_calories = Column(Float, nullable=True)
+    confidence_score = Column(Float, nullable=True)
+    
+    # Status
+    is_logged = Column(Boolean, default=False)  # Whether user logged these items
+    
+    # Timestamps
+    created_at = Column(DateTime, default=func.now())
+
+
+# ============== Family Sharing Models ==============
+
+class FamilyMember(Base):
+    """Family member connections for sharing"""
+    __tablename__ = "family_members"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    
+    # Member info
+    member_email = Column(String(255), nullable=False)
+    member_name = Column(String(100), nullable=False)
+    relation_type = Column(String(50), nullable=False)  # mother, father, sister, partner, friend
+    
+    # Invitation
+    invite_code = Column(String(100), unique=True, nullable=False)
+    invite_status = Column(String(50), default="pending")  # pending, accepted, declined
+    
+    # Permissions
+    permissions = Column(JSON, default=dict)  # {"can_view_mood": true, "can_view_symptoms": true, ...}
+    
+    # Timestamps
+    created_at = Column(DateTime, default=func.now())
+    accepted_at = Column(DateTime, nullable=True)
+    
+    # Relationships
+    user = relationship("User", backref="family_members")
+
+
+class FamilyNotification(Base):
+    """Notifications for family members"""
+    __tablename__ = "family_notifications"
+
+    id = Column(Integer, primary_key=True, index=True)
+    family_member_id = Column(Integer, ForeignKey("family_members.id"), nullable=False)
+    
+    # Notification content
+    notification_type = Column(String(100), nullable=False)  # phase_change, mood_update, exercise_completed, etc.
+    title = Column(String(200), nullable=False)
+    message = Column(Text, nullable=False)
+    
+    # Status
+    is_read = Column(Boolean, default=False)
+    
+    # Timestamps
+    created_at = Column(DateTime, default=func.now())
+
+
+class CareSuggestion(Base):
+    """AI-generated care suggestions for family members"""
+    __tablename__ = "care_suggestions"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    
+    # Suggestion details
+    phase = Column(String(50), nullable=False)  # menstrual, follicular, ovulation, luteal
+    suggestion_type = Column(String(100), nullable=False)  # emotional_support, physical_care, dietary, activity
+    title = Column(String(200), nullable=False)
+    description = Column(Text, nullable=False)
+    
+    # Priority
+    priority = Column(Integer, default=5)  # 1-10
+    
+    # Timestamps
+    created_at = Column(DateTime, default=func.now())
+
+
+class MoodLog(Base):
+    """Quick mood logging with emoji"""
+    __tablename__ = "mood_logs"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    
+    # Mood data
+    date = Column(Date, nullable=False)
+    mood = Column(String(50), nullable=False)  # happy, sad, anxious, calm, irritated, tired, energetic
+    mood_emoji = Column(String(10), nullable=True)
+    energy_level = Column(Integer, nullable=True)  # 1-5
+    notes = Column(Text, nullable=True)
+    
+    # Timestamps
+    created_at = Column(DateTime, default=func.now())
+
+
+# ============== Hydration & Sleep Models ==============
+
+class WaterLog(Base):
+    """Daily water intake tracking"""
+    __tablename__ = "water_logs"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    
+    # Water data
+    date = Column(Date, nullable=False)
+    amount_ml = Column(Integer, nullable=False)  # Amount in milliliters
+    drink_type = Column(String(50), default="water")  # water, tea, coffee, juice, infused_water
+    
+    # Time tracking
+    logged_at = Column(DateTime, default=func.now())
+    
+    # Timestamps
+    created_at = Column(DateTime, default=func.now())
+
+
+class DailyHydrationGoal(Base):
+    """User's daily hydration goal"""
+    __tablename__ = "hydration_goals"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False, unique=True)
+    
+    # Goal settings
+    daily_goal_ml = Column(Integer, default=2500)  # Default 2.5L
+    reminder_enabled = Column(Boolean, default=True)
+    reminder_interval_hours = Column(Integer, default=2)  # Remind every 2 hours
+    
+    # Phase-based adjustments
+    adjust_for_phase = Column(Boolean, default=True)
+    menstrual_multiplier = Column(Float, default=1.2)  # 20% more during period
+    
+    # Timestamps
+    created_at = Column(DateTime, default=func.now())
+    updated_at = Column(DateTime, default=func.now(), onupdate=func.now())
+
+
+class SleepLog(Base):
+    """Sleep quality and duration tracking"""
+    __tablename__ = "sleep_logs"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    
+    # Sleep data
+    date = Column(Date, nullable=False)  # Date of sleep (night before)
+    bedtime = Column(DateTime, nullable=True)
+    wake_time = Column(DateTime, nullable=True)
+    duration_hours = Column(Float, nullable=True)
+    
+    # Quality metrics
+    quality_rating = Column(Integer, nullable=True)  # 1-5
+    had_cramps = Column(Boolean, default=False)
+    had_hot_flashes = Column(Boolean, default=False)
+    took_medication = Column(Boolean, default=False)
+    
+    # Notes
+    notes = Column(Text, nullable=True)
+    
+    # Timestamps
+    created_at = Column(DateTime, default=func.now())

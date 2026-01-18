@@ -15,6 +15,13 @@ import Education from './pages/Education';
 import Settings from './pages/Settings';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Activity from './pages/Activity';
+import CalorieLogger from './pages/CalorieLogger';
+import FamilySharing from './pages/FamilySharing';
+import FamilyView from './pages/FamilyView';
+import WaterTracker from './pages/WaterTracker';
+import Fertility from './pages/Fertility';
+import MoodJournal from './pages/MoodJournal';
 
 // Loading spinner component
 function LoadingScreen() {
@@ -119,7 +126,16 @@ function App() {
                 <Route path="chat" element={<Chat />} />
                 <Route path="education" element={<Education />} />
                 <Route path="settings" element={<Settings />} />
+                <Route path="activity" element={<Activity />} />
+                <Route path="nutrition" element={<CalorieLogger />} />
+                <Route path="hydration" element={<WaterTracker />} />
+                <Route path="family" element={<FamilySharing />} />
+                <Route path="fertility" element={<Fertility />} />
+                <Route path="mood" element={<MoodJournal />} />
             </Route>
+
+            {/* Public Family View Route */}
+            <Route path="/family-view/:inviteCode" element={<FamilyView />} />
 
             {/* Fallback */}
             <Route path="*" element={<Navigate to="/" replace />} />

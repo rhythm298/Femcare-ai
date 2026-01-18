@@ -9,7 +9,7 @@ from contextlib import asynccontextmanager
 
 from app.database import init_db
 from app.config import settings
-from app.routers import auth, cycles, symptoms, insights, chat
+from app.routers import auth, cycles, symptoms, insights, chat, activity, nutrition, family, hydration, mood
 
 
 @asynccontextmanager
@@ -65,6 +65,11 @@ app.include_router(cycles.router)
 app.include_router(symptoms.router)
 app.include_router(insights.router)
 app.include_router(chat.router)
+app.include_router(activity.router)
+app.include_router(nutrition.router)
+app.include_router(family.router)
+app.include_router(hydration.router)
+app.include_router(mood.router)
 
 
 @app.get("/")

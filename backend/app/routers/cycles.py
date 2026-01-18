@@ -276,6 +276,175 @@ async def get_cycle_prediction(
     }
 
 
+@router.get("/fertility")
+async def get_fertility_window(
+    current_user: models.User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    """
+    Get comprehensive fertility tracking information including:
+    - Current fertility status
+    - Ovulation prediction
+    - Detailed calendar with daily fertility levels
+    - Conception probability per day
+    """
+    if current_user.is_on_birth_control:
+        return {
+            "enabled": False,
+            "message": "Fertility tracking is disabled while on birth control. Update your profile to enable."
+        }
+    
+    cycles = db.query(models.CycleEntry).filter(
+        models.CycleEntry.user_id == current_user.id
+    ).order_by(desc(models.CycleEntry.start_date)).all()
+    
+    if len(cycles) < 1:
+        return {
+            "enabled": True,
+            "has_data": False,
+            "message": "Log at least one cycle to get fertility predictions"
+        }
+    
+    latest_cycle = cycles[0]
+    today = date.today()
+    cycle_day = (today - latest_cycle.start_date).days + 1
+    
+    # Calculate averages
+    cycle_lengths = [c.cycle_length for c in cycles if c.cycle_length]
+    avg_cycle = np.mean(cycle_lengths) if cycle_lengths else 28
+    
+    # Ovulation typically occurs 14 days BEFORE next period
+    ovulation_day = round(avg_cycle - 14)
+    ovulation_date = latest_cycle.start_date + timedelta(days=ovulation_day)
+    
+    # Fertile window: 5 days before ovulation to 1 day after
+    fertile_start = ovulation_date - timedelta(days=5)
+    fertile_end = ovulation_date + timedelta(days=1)
+    
+    # Determine current fertility status
+    if today < fertile_start:
+        days_to_fertile = (fertile_start - today).days
+        status = "low"
+        status_message = f"Low fertility - Fertile window starts in {days_to_fertile} days"
+        status_emoji = "🔵"
+    elif today <= fertile_end:
+        if today == ovulation_date:
+            status = "peak"
+            status_message = "🎯 Peak Ovulation Day! Highest fertility"
+            status_emoji = "🔴"
+        elif today >= ovulation_date - timedelta(days=1):
+            status = "high"
+            status_message = "Very high fertility - Peak ovulation window"
+            status_emoji = "🟠"
+        else:
+            status = "fertile"
+            status_message = "Fertile window - Elevated chance of conception"
+            status_emoji = "🟡"
+    else:
+        status = "low"
+        days_since_ovulation = (today - ovulation_date).days
+        status_message = f"Low fertility - {days_since_ovulation} days post-ovulation"
+        status_emoji = "🔵"
+    
+    # Generate calendar data for next 35 days
+    calendar_days = []
+    for i in range(-7, 35):  # Past week + next 5 weeks
+        day = latest_cycle.start_date + timedelta(days=cycle_day - 1 + i)
+        day_of_cycle = (day - latest_cycle.start_date).days + 1
+        
+        # Determine fertility level for this day
+        if day_of_cycle <= 0:
+            fertility_level = "none"
+            conception_chance = 0
+        elif day_of_cycle <= 5:  # Menstrual phase
+            fertility_level = "menstrual"
+            conception_chance = 2
+        elif day_of_cycle < ovulation_day - 5:  # Pre-fertile
+            fertility_level = "low"
+            conception_chance = 5
+        elif day_of_cycle == ovulation_day - 5:
+            fertility_level = "fertile_start"
+            conception_chance = 10
+        elif day_of_cycle == ovulation_day - 4:
+            fertility_level = "fertile"
+            conception_chance = 15
+        elif day_of_cycle == ovulation_day - 3:
+            fertility_level = "fertile"
+            conception_chance = 20
+        elif day_of_cycle == ovulation_day - 2:
+            fertility_level = "high"
+            conception_chance = 25
+        elif day_of_cycle == ovulation_day - 1:
+            fertility_level = "very_high"
+            conception_chance = 30
+        elif day_of_cycle == ovulation_day:
+            fertility_level = "peak"
+            conception_chance = 33
+        elif day_of_cycle == ovulation_day + 1:
+            fertility_level = "high"
+            conception_chance = 15
+        else:  # Post-ovulation
+            fertility_level = "low"
+            conception_chance = 2
+        
+        calendar_days.append({
+            "date": day.isoformat(),
+            "cycle_day": day_of_cycle if day_of_cycle > 0 else None,
+            "fertility_level": fertility_level,
+            "conception_chance": conception_chance,
+            "is_today": day == today,
+            "is_ovulation": day_of_cycle == ovulation_day,
+            "is_period": day_of_cycle <= 5 if day_of_cycle > 0 else False
+        })
+    
+    # PMS window (5 days before expected period)
+    predicted_period = latest_cycle.predicted_next_start or (latest_cycle.start_date + timedelta(days=round(avg_cycle)))
+    pms_start = predicted_period - timedelta(days=7)
+    is_pms_window = pms_start <= today < predicted_period
+    
+    return {
+        "enabled": True,
+        "has_data": True,
+        "today": {
+            "date": today.isoformat(),
+            "cycle_day": cycle_day,
+            "status": status,
+            "status_message": status_message,
+            "status_emoji": status_emoji
+        },
+        "ovulation": {
+            "predicted_date": ovulation_date.isoformat(),
+            "cycle_day": ovulation_day,
+            "days_until": (ovulation_date - today).days if ovulation_date >= today else None,
+            "days_since": (today - ovulation_date).days if today > ovulation_date else None
+        },
+        "fertile_window": {
+            "start": fertile_start.isoformat(),
+            "end": fertile_end.isoformat(),
+            "is_in_window": fertile_start <= today <= fertile_end,
+            "days_in_window": 7
+        },
+        "next_period": {
+            "predicted_date": predicted_period.isoformat(),
+            "days_until": (predicted_period - today).days
+        },
+        "pms": {
+            "is_pms_window": is_pms_window,
+            "pms_start": pms_start.isoformat()
+        },
+        "calendar": calendar_days,
+        "insights": {
+            "avg_cycle_length": round(avg_cycle, 1),
+            "ovulation_day": ovulation_day,
+            "fertile_window_days": 7,
+            "best_conception_days": [
+                (ovulation_date - timedelta(days=1)).isoformat(),
+                ovulation_date.isoformat()
+            ]
+        }
+    }
+
+
 @router.get("/patterns", response_model=schemas.CyclePatterns)
 async def get_cycle_patterns(
     current_user: models.User = Depends(get_current_user),

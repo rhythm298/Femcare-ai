@@ -259,18 +259,6 @@ export default function Settings() {
                             <h2>Privacy & Data</h2>
                             <p className="section-desc">Manage your data and privacy settings</p>
 
-                            <div className="toggle-group">
-                                <label className="toggle-item">
-                                    <input
-                                        type="checkbox"
-                                        checked={partnerSharing}
-                                        onChange={(e) => setPartnerSharing(e.target.checked)}
-                                    />
-                                    <span className="toggle-label">Partner Sharing</span>
-                                    <span className="toggle-desc">Allow sharing selected health updates with a partner</span>
-                                </label>
-                            </div>
-
                             <div className="data-actions">
                                 <button className="btn btn-secondary" onClick={handleExportData}>
                                     <Download size={18} />

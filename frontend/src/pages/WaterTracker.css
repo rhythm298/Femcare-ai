@@ -1,0 +1,606 @@
+/* Water Tracker Page Styles */
+
+.water-page {
+    padding: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.water-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.water-header h1 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.phase-info {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: capitalize;
+}
+
+.phase-boost {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/* Progress Section */
+.progress-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.progress-ring-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 1rem;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+}
+
+.ring-bg {
+    stroke: var(--border);
+}
+
+.ring-progress {
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+.ring-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ring-content .water-icon {
+    color: #3b82f6;
+    margin-bottom: 0.25rem;
+}
+
+.ring-content .amount {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.ring-content .unit {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.ring-content .percentage {
+    font-size: 0.85rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin-top: 0.25rem;
+}
+
+.goal-info {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.goal-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.goal-stat svg {
+    color: var(--primary);
+}
+
+.goal-stat .glasses-icon {
+    font-size: 1rem;
+}
+
+.goal-stat.remaining {
+    color: var(--warning);
+    font-weight: 500;
+}
+
+.goal-achieved {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #22c55e20 0%, #10b98120 100%);
+    border: 1px solid #22c55e40;
+    border-radius: 25px;
+    color: #22c55e;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Phase Tip */
+.phase-tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--bg-secondary);
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    border-left: 3px solid var(--primary);
+}
+
+.phase-tip svg {
+    color: var(--primary);
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.phase-tip p {
+    font-size: 0.85rem;
+    margin: 0;
+    color: var(--text-muted);
+}
+
+/* Drink Selector */
+.drink-selector {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+}
+
+.drink-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    border: 2px solid var(--border);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 70px;
+}
+
+.drink-option.active {
+    border-color: var(--drink-color, var(--primary));
+    background: color-mix(in srgb, var(--drink-color, var(--primary)) 10%, transparent);
+}
+
+.drink-icon {
+    font-size: 1.5rem;
+}
+
+.drink-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.drink-option.active .drink-label {
+    color: var(--drink-color, var(--primary));
+    font-weight: 500;
+}
+
+/* Quick Add Section */
+.quick-add-section {
+    margin-bottom: 1.5rem;
+}
+
+.quick-add-section h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-muted);
+}
+
+.quick-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+.quick-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.75rem 0.5rem;
+    border-radius: 12px;
+    border: none;
+    background: var(--bg-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.quick-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.quick-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.quick-icon {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.quick-ml {
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.quick-label {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+}
+
+.quick-btn:hover .quick-label {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Custom Add */
+.custom-add-section {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.custom-input-group {
+    display: flex;
+    align-items: center;
+    background: var(--bg-secondary);
+    border-radius: 10px;
+    flex: 1;
+}
+
+.custom-input-group button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: var(--text-primary);
+}
+
+.custom-input-group input {
+    width: 60px;
+    text-align: center;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.custom-input-group .unit-label {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-right: 0.5rem;
+}
+
+.add-custom-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+/* Today's Logs */
+.today-logs-section {
+    margin-bottom: 1.5rem;
+}
+
+.today-logs-section h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-muted);
+}
+
+.logs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.log-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: var(--bg-secondary);
+    border-radius: 10px;
+}
+
+.log-icon {
+    font-size: 1.25rem;
+}
+
+.log-info {
+    flex: 1;
+}
+
+.log-amount {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.log-type {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.5rem;
+}
+
+.log-time {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.log-item .delete-btn {
+    padding: 0.35rem;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.log-item .delete-btn:hover {
+    color: var(--error);
+}
+
+/* History Section */
+.history-section {
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    padding: 1.25rem;
+}
+
+.history-section h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.history-chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100px;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.chart-bar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.bar-fill {
+    width: 100%;
+    max-width: 30px;
+    min-height: 4px;
+    background: var(--primary);
+    border-radius: 4px 4px 0 0;
+    transition: height 0.3s;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 0.25rem;
+}
+
+.bar-fill.met {
+    background: #22c55e;
+}
+
+.bar-fill svg {
+    color: white;
+}
+
+.chart-bar.today .bar-fill {
+    box-shadow: 0 0 0 2px var(--primary);
+}
+
+.bar-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.chart-bar.today .bar-label {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.history-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.history-stats .stat {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.history-stats .stat svg {
+    color: var(--primary);
+}
+
+/* Loading */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+}
+
+.loading-icon {
+    color: var(--primary);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.95);
+    }
+}
+
+/* Modals */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.modal {
+    background: var(--bg-primary);
+    border-radius: 16px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.modal-header h3 {
+    font-size: 1.1rem;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+}
+
+.goal-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.goal-input button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--bg-secondary);
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.goal-input input {
+    width: 100px;
+    text-align: center;
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: var(--bg-secondary);
+}
+
+.form-group .hint {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.toggle-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.toggle-group input {
+    margin-top: 0.2rem;
+    width: 18px;
+    height: 18px;
+}
+
+.toggle-label strong {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.toggle-label small {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .quick-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .drink-selector {
+        justify-content: flex-start;
+    }
+}

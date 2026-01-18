@@ -19,13 +19,25 @@ import {
     Heart,
     Moon,
     Sun,
+    Dumbbell,
+    Apple,
+    Users,
+    Droplets,
+    Target,
+    Smile,
 } from 'lucide-react';
 import './Layout.css';
 
 const navItems = [
     { path: '/', icon: LayoutDashboard, label: 'Dashboard' },
     { path: '/cycles', icon: Calendar, label: 'Cycle Tracker' },
+    { path: '/fertility', icon: Target, label: 'Fertility' },
     { path: '/symptoms', icon: Activity, label: 'Symptoms' },
+    { path: '/mood', icon: Smile, label: 'Mood Journal' },
+    { path: '/activity', icon: Dumbbell, label: 'Activity' },
+    { path: '/nutrition', icon: Apple, label: 'Nutrition' },
+    { path: '/hydration', icon: Droplets, label: 'Water Tracker' },
+    { path: '/family', icon: Users, label: 'Family Sharing' },
     { path: '/insights', icon: LineChart, label: 'Health Insights' },
     { path: '/chat', icon: MessageCircle, label: 'AI Assistant' },
     { path: '/education', icon: BookOpen, label: 'Learn' },
@@ -116,21 +128,6 @@ export default function Layout() {
             <main className="main-content">
                 <Outlet />
             </main>
-
-            {/* Footer Credit */}
-            <footer className="app-footer">
-                <span>Made with </span>
-                <Heart className="footer-heart" size={16} />
-                <span> by </span>
-                <a
-                    href="https://www.linkedin.com/in/justrhythm"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="footer-link"
-                >
-                    Rhythm Mehta
-                </a>
-            </footer>
         </div>
     );
 }

@@ -1,25 +1,77 @@
 /**
  * AI Chat Page - Health Assistant
+ * Interactive AI-powered health companion
  */
 
 import { useState, useRef, useEffect } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { chatApi } from '../services/api';
 import { format } from 'date-fns';
-import { MessageCircle, Send, Trash2, Bot, User } from 'lucide-react';
+import { MessageCircle, Send, Trash2, Bot, User, Heart, Calendar, Activity, Droplets, Apple, Moon, Sparkles } from 'lucide-react';
 import './Chat.css';
 
-const quickQuestions = [
-    "When is my next period?",
-    "What's my PCOS risk?",
-    "Tell me about my recent symptoms",
-    "What recommendations do you have?",
-    "What is endometriosis?",
+// Quick action categories
+const quickActions = [
+    {
+        icon: '📅',
+        label: 'Period',
+        questions: [
+            "When is my next period?",
+            "How long is my average cycle?",
+            "Am I fertile right now?"
+        ]
+    },
+    {
+        icon: '💊',
+        label: 'Symptoms',
+        questions: [
+            "What do my symptoms mean?",
+            "How can I relieve cramps?",
+            "Is this symptom normal?"
+        ]
+    },
+    {
+        icon: '🏃‍♀️',
+        label: 'Exercise',
+        questions: [
+            "What exercises are best for me today?",
+            "Can I work out during my period?",
+            "What's my exercise streak?"
+        ]
+    },
+    {
+        icon: '🍎',
+        label: 'Nutrition',
+        questions: [
+            "What should I eat this phase?",
+            "Foods to avoid during period?",
+            "How are my calories today?"
+        ]
+    },
+    {
+        icon: '⚠️',
+        label: 'Health Risk',
+        questions: [
+            "What's my PCOS risk?",
+            "Should I see a doctor?",
+            "What are endometriosis symptoms?"
+        ]
+    },
+    {
+        icon: '💡',
+        label: 'Tips',
+        questions: [
+            "Give me self-care tips",
+            "How to sleep better?",
+            "Stress management advice"
+        ]
+    }
 ];
 
 export default function Chat() {
     const queryClient = useQueryClient();
     const [message, setMessage] = useState('');
+    const [activeCategory, setActiveCategory] = useState<number | null>(null);
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
     const { data: messages = [], isLoading } = useQuery({
@@ -32,6 +84,7 @@ export default function Chat() {
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ['chatHistory'] });
             setMessage('');
+            setActiveCategory(null);
         },
     });
 
@@ -63,10 +116,15 @@ export default function Chat() {
                 {/* Header */}
                 <div className="chat-header">
                     <div className="chat-title">
-                        <MessageCircle size={24} />
+                        <div className="ai-avatar">
+                            <Bot size={24} />
+                            <span className="online-dot"></span>
+                        </div>
                         <div>
-                            <h1>AI Health Assistant</h1>
-                            <p>Ask me anything about your health</p>
+                            <h1>FemCare AI</h1>
+                            <p className="status-text">
+                                <Sparkles size={12} /> Always here to help
+                            </p>
                         </div>
                     </div>
                     {messages.length > 0 && (
@@ -76,7 +134,6 @@ export default function Chat() {
                             disabled={clearMutation.isPending}
                         >
                             <Trash2 size={18} />
-                            Clear
                         </button>
                     )}
                 </div>
@@ -85,27 +142,74 @@ export default function Chat() {
                 <div className="chat-messages">
                     {messages.length === 0 ? (
                         <div className="chat-welcome">
-                            <div className="welcome-avatar">
-                                <Bot size={40} />
+                            <div className="welcome-header">
+                                <div className="welcome-avatar">
+                                    <Bot size={48} />
+                                </div>
+                                <h2>Hi there! 👋</h2>
+                                <p className="welcome-subtitle">
+                                    I'm your personal health companion. How can I help you today?
+                                </p>
                             </div>
-                            <h2>Hello! 👋</h2>
-                            <p>
-                                I'm your personal health assistant. I can help you understand your
-                                cycle, symptoms, health risks, and provide personalized recommendations.
-                            </p>
-                            <div className="quick-questions">
-                                <p className="quick-title">Try asking:</p>
-                                <div className="quick-buttons">
-                                    {quickQuestions.map((q) => (
-                                        <button
-                                            key={q}
-                                            className="quick-btn"
-                                            onClick={() => handleQuickQuestion(q)}
-                                            disabled={sendMutation.isPending}
-                                        >
-                                            {q}
-                                        </button>
-                                    ))}
+
+                            {/* Quick Action Cards */}
+                            <div className="quick-actions-grid">
+                                {quickActions.map((action, idx) => (
+                                    <button
+                                        key={idx}
+                                        className={`quick-action-card ${activeCategory === idx ? 'active' : ''}`}
+                                        onClick={() => setActiveCategory(activeCategory === idx ? null : idx)}
+                                    >
+                                        <span className="action-icon">{action.icon}</span>
+                                        <span className="action-label">{action.label}</span>
+                                    </button>
+                                ))}
+                            </div>
+
+                            {/* Expanded Questions */}
+                            {activeCategory !== null && (
+                                <div className="expanded-questions animate-fade-in">
+                                    <h3>Ask about {quickActions[activeCategory].label}:</h3>
+                                    <div className="question-buttons">
+                                        {quickActions[activeCategory].questions.map((q, i) => (
+                                            <button
+                                                key={i}
+                                                className="question-btn"
+                                                onClick={() => handleQuickQuestion(q)}
+                                                disabled={sendMutation.isPending}
+                                            >
+                                                {q}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* Smart Suggestions based on time */}
+                            <div className="smart-suggestions">
+                                <h3>💡 Suggested for you:</h3>
+                                <div className="suggestion-chips">
+                                    <button
+                                        className="suggestion-chip"
+                                        onClick={() => handleQuickQuestion("How am I doing today?")}
+                                        disabled={sendMutation.isPending}
+                                    >
+                                        <Moon size={14} /> Daily check-in
+                                    </button>
+                                    <button
+                                        className="suggestion-chip"
+                                        onClick={() => handleQuickQuestion("Give me personalized recommendations")}
+                                        disabled={sendMutation.isPending}
+                                    >
+                                        <Heart size={14} /> Get recommendations
+                                    </button>
+                                    <button
+                                        className="suggestion-chip"
+                                        onClick={() => handleQuickQuestion("Explain my current cycle phase")}
+                                        disabled={sendMutation.isPending}
+                                    >
+                                        <Calendar size={14} /> Cycle insights
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -146,6 +250,31 @@ export default function Chat() {
                                 </div>
                             )}
                             <div ref={messagesEndRef} />
+
+                            {/* Show quick actions below messages too */}
+                            <div className="inline-quick-actions">
+                                <button
+                                    className="inline-action"
+                                    onClick={() => handleQuickQuestion("Tell me more")}
+                                    disabled={sendMutation.isPending}
+                                >
+                                    Tell me more
+                                </button>
+                                <button
+                                    className="inline-action"
+                                    onClick={() => handleQuickQuestion("What else should I know?")}
+                                    disabled={sendMutation.isPending}
+                                >
+                                    What else?
+                                </button>
+                                <button
+                                    className="inline-action"
+                                    onClick={() => handleQuickQuestion("Give me an action plan")}
+                                    disabled={sendMutation.isPending}
+                                >
+                                    Action plan
+                                </button>
+                            </div>
                         </>
                     )}
                 </div>
@@ -155,7 +284,7 @@ export default function Chat() {
                     <input
                         type="text"
                         className="chat-input"
-                        placeholder="Type your message..."
+                        placeholder="Ask me anything about your health..."
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         disabled={sendMutation.isPending}

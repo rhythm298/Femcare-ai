@@ -1,0 +1,325 @@
+/* Mood Journal Page Styles */
+
+.mood-journal-page {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Streak Banner */
+.streak-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-4) var(--spacing-6);
+    margin-bottom: var(--spacing-6);
+    border-radius: var(--radius-xl);
+    background: linear-gradient(135deg, rgba(251, 146, 60, 0.15), rgba(236, 72, 153, 0.15));
+}
+
+.streak-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+}
+
+.streak-icon {
+    color: #fb923c;
+}
+
+.streak-count {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    background: linear-gradient(135deg, #fb923c, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.streak-label {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.streak-badge {
+    padding: var(--spacing-2) var(--spacing-4);
+    background: linear-gradient(135deg, #fb923c, #ec4899);
+    color: white;
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+/* Today's Mood */
+.mood-entries {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+}
+
+.mood-entry {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    padding: var(--spacing-3);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+}
+
+.mood-emoji {
+    font-size: 2rem;
+}
+
+.mood-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.mood-name {
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.mood-energy {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+}
+
+.no-mood {
+    text-align: center;
+    padding: var(--spacing-6);
+}
+
+.no-mood p {
+    margin-bottom: var(--spacing-4);
+    color: var(--text-secondary);
+}
+
+/* Daily Prompt */
+.daily-prompt {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+    padding: var(--spacing-4);
+    margin-bottom: var(--spacing-6);
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1));
+}
+
+.prompt-icon {
+    font-size: 2rem;
+}
+
+.prompt-text {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Mood Bars */
+.mood-bars {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+}
+
+.mood-bar-item {
+    display: grid;
+    grid-template-columns: 40px 1fr 50px;
+    align-items: center;
+    gap: var(--spacing-3);
+}
+
+.bar-emoji {
+    font-size: 1.5rem;
+}
+
+.bar-track {
+    height: 12px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ec4899, #a855f7);
+    border-radius: var(--radius-full);
+    transition: width 0.5s ease;
+}
+
+.bar-percent {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-align: right;
+}
+
+/* Phase Moods */
+.phase-moods {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-3);
+}
+
+.phase-mood-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+    padding: var(--spacing-3);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+}
+
+.phase-name {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    text-transform: capitalize;
+}
+
+.phase-dominant {
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.phase-energy {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-1);
+    font-size: var(--font-size-sm);
+    color: #fbbf24;
+}
+
+/* Insights List */
+.insight-item {
+    padding: var(--spacing-3);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border-left: 3px solid var(--color-primary-500);
+    margin-bottom: var(--spacing-3);
+}
+
+.insight-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Mood Modal */
+.mood-modal {
+    max-width: 550px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.mood-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-2);
+    margin-bottom: var(--spacing-4);
+}
+
+.mood-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-3);
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.mood-option:hover {
+    border-color: var(--color-primary-300);
+    transform: scale(1.05);
+}
+
+.mood-option.selected {
+    border-color: var(--color-primary-500);
+    background: rgba(236, 72, 153, 0.15);
+}
+
+.mood-option-emoji {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-1);
+}
+
+.mood-option-label {
+    font-size: var(--font-size-xs);
+    text-transform: capitalize;
+}
+
+/* Energy Selector */
+.energy-selector {
+    display: flex;
+    gap: var(--spacing-2);
+}
+
+.energy-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    opacity: 0.4;
+    transition: all var(--transition-fast);
+}
+
+.energy-btn.active {
+    opacity: 1;
+    border-color: #fbbf24;
+    background: rgba(251, 191, 36, 0.15);
+}
+
+/* Trigger Grid */
+.trigger-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-2);
+}
+
+.trigger-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-2) var(--spacing-3);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    transition: all var(--transition-fast);
+}
+
+.trigger-btn:hover {
+    border-color: var(--color-primary-300);
+}
+
+.trigger-btn.selected {
+    border-color: var(--color-primary-500);
+    background: rgba(236, 72, 153, 0.1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .mood-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .trigger-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .phase-moods {
+        grid-template-columns: 1fr;
+    }
+
+    .streak-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-3);
+    }
+}

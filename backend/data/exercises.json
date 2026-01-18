@@ -1,0 +1,552 @@
+[
+    {
+        "name": "Gentle Yoga for Period Relief",
+        "category": "yoga",
+        "intensity_level": "low",
+        "duration_minutes": 20,
+        "suitable_phases": [
+            "menstrual",
+            "luteal",
+            "late_luteal"
+        ],
+        "description": "A gentle yoga sequence specifically designed to relieve menstrual cramps and lower back pain. This practice focuses on hip openers and gentle twists.",
+        "benefits": "Reduces menstrual cramps, relieves lower back pain, calms the nervous system, improves blood circulation to pelvic area",
+        "instructions": [
+            "Start in Child's Pose - kneel with knees wide, arms extended forward, rest forehead on mat for 5 deep breaths",
+            "Move to Cat-Cow - on all fours, alternate between arching and rounding spine for 10 repetitions",
+            "Reclined Butterfly - lie on back, soles of feet together, knees fall open, place hands on belly for 1 minute",
+            "Supine Twist - lying on back, bring knees to chest, drop both knees to one side, arms in T position, hold 30 seconds each side",
+            "Legs Up The Wall - lie with legs resting up against a wall for 2-3 minutes to reduce bloating and fatigue"
+        ],
+        "youtube_video_id": "v7AYKMP6rOE",
+        "youtube_video_title": "Yoga For Period Relief - 15 Minute Practice",
+        "youtube_search_query": "yoga for period cramps relief",
+        "calories_per_minute": 2.5,
+        "image_url": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400",
+        "step_by_step_images": [
+            "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=300",
+            "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=300"
+        ]
+    },
+    {
+        "name": "Anti-Bloating Stretch Routine",
+        "category": "stretching",
+        "intensity_level": "low",
+        "duration_minutes": 15,
+        "suitable_phases": [
+            "menstrual",
+            "luteal",
+            "late_luteal"
+        ],
+        "description": "Gentle stretches that help reduce bloating and water retention common during menstruation. Focuses on abdominal compression and spinal twists.",
+        "benefits": "Reduces bloating, aids digestion, relieves gas, reduces water retention, promotes lymphatic drainage",
+        "instructions": [
+            "Wind-Relieving Pose - lie on back, hug right knee to chest, hold 30 seconds, switch sides",
+            "Supine Spinal Twist - lying down, cross right knee over body to left side, arms in T, look right, hold 1 minute each side",
+            "Seated Side Stretch - sit cross-legged, reach right arm overhead and lean left, hold 30 seconds each side",
+            "Cat-Cow Flow - on hands and knees, inhale arch back, exhale round spine, repeat 15 times slowly",
+            "Child's Pose with Belly Massage - in child's pose, gently rock side to side massaging abdomen"
+        ],
+        "youtube_video_id": "bJvxlg5QBOY",
+        "youtube_video_title": "Yoga to Reduce Bloating",
+        "youtube_search_query": "yoga for bloating period",
+        "calories_per_minute": 2.0,
+        "image_url": "https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=400"
+    },
+    {
+        "name": "Cramp Relief Breathing",
+        "category": "meditation",
+        "intensity_level": "low",
+        "duration_minutes": 10,
+        "suitable_phases": [
+            "menstrual",
+            "late_luteal"
+        ],
+        "description": "Deep breathing exercises that activate the parasympathetic nervous system to reduce pain perception and relax uterine muscles.",
+        "benefits": "Reduces cramp intensity, activates body's natural pain relief, calms anxiety, promotes relaxation",
+        "instructions": [
+            "Get comfortable - lie down with a pillow under your knees, or sit comfortably with back supported",
+            "Place one hand on chest, one on lower belly",
+            "Inhale slowly through nose for 4 counts, feeling belly rise",
+            "Hold breath gently for 4 counts",
+            "Exhale slowly through mouth for 6 counts, feeling belly fall",
+            "Repeat cycle 15-20 times, focusing on making exhale longer than inhale",
+            "Optional: Place a warm compress on lower abdomen while breathing"
+        ],
+        "youtube_video_id": "inpok4MKVLM",
+        "youtube_video_title": "Guided Breathing for Pain Relief",
+        "youtube_search_query": "breathing exercises period pain relief",
+        "calories_per_minute": 1.0,
+        "image_url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400"
+    },
+    {
+        "name": "Pelvic Floor Relaxation",
+        "category": "recovery",
+        "intensity_level": "low",
+        "duration_minutes": 15,
+        "suitable_phases": [
+            "menstrual",
+            "luteal"
+        ],
+        "description": "Exercises to consciously relax the pelvic floor muscles, reducing cramping and tension in the lower abdomen.",
+        "benefits": "Reduces pelvic tension, alleviates cramps, improves blood flow, helps with heavy flow days",
+        "instructions": [
+            "Happy Baby Pose - lie on back, grab outer edges of feet, knees toward armpits, rock gently side to side for 1 minute",
+            "Supported Bridge - lie on back, place a yoga block or firm pillow under sacrum, let hips rest, stay 2 minutes",
+            "Goddess Pose - lie on back, soles of feet together, knees wide, support knees with pillows, arms relaxed at sides, stay 3 minutes",
+            "Deep Squat with Support - hold onto a chair or wall, lower into a deep squat, let pelvic floor release, hold 30-60 seconds",
+            "Constructive Rest - lie on back, feet flat on floor hip-width apart, knees touching, arms relaxed, breathe deeply for 3 minutes"
+        ],
+        "youtube_video_id": "kgSjDGKwQDI",
+        "youtube_video_title": "Pelvic Floor Release",
+        "youtube_search_query": "pelvic floor relaxation menstrual",
+        "calories_per_minute": 1.5,
+        "image_url": "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400"
+    },
+    {
+        "name": "Gentle Hip Circles",
+        "category": "stretching",
+        "intensity_level": "low",
+        "duration_minutes": 10,
+        "suitable_phases": [
+            "menstrual",
+            "follicular",
+            "luteal"
+        ],
+        "description": "Slow, circular movements of the hips to increase blood flow and reduce stiffness in the lower back and pelvis.",
+        "benefits": "Increases circulation to reproductive organs, releases hip tension, reduces lower back pain, promotes flexibility",
+        "instructions": [
+            "Stand with feet hip-width apart, hands on hips",
+            "Begin making slow, large circles with your hips - 10 circles clockwise",
+            "Reverse direction - 10 circles counter-clockwise",
+            "On all fours, make circles with your hips - 10 each direction",
+            "Come to standing, feet wider than hips, circle hips in figure-8 pattern - 10 times",
+            "Finish with gentle swaying side to side for 1 minute"
+        ],
+        "youtube_video_id": "GQ0IeWAyDfI",
+        "youtube_video_title": "Hip Circles for Period Pain",
+        "youtube_search_query": "hip circles period relief",
+        "calories_per_minute": 2.5,
+        "image_url": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400"
+    },
+    {
+        "name": "Lower Back Relief Stretches",
+        "category": "stretching",
+        "intensity_level": "low",
+        "duration_minutes": 12,
+        "suitable_phases": [
+            "menstrual",
+            "luteal",
+            "late_luteal"
+        ],
+        "description": "Targeted stretches for the lower back which often gets sore during menstruation due to prostaglandin release.",
+        "benefits": "Relieves lower back pain, reduces muscle tension, improves posture, helps with radiating leg pain",
+        "instructions": [
+            "Knee-to-Chest Stretch - lie on back, hug both knees to chest, gentle rock side to side for 1 minute",
+            "Piriformis Stretch - cross right ankle over left knee, pull left thigh toward chest, hold 45 seconds each side",
+            "Seated Forward Fold - sit with legs extended, hinge at hips and reach for toes, hold 1 minute",
+            "Thread the Needle - on all fours, thread right arm under body, rest shoulder and head on floor, hold 30 seconds each side",
+            "Spinal Twist - sit cross-legged, twist to right placing left hand on right knee, look over right shoulder, hold 30 seconds each side"
+        ],
+        "youtube_video_id": "g_tea8ZNk5A",
+        "youtube_video_title": "Lower Back Stretches for Period Pain",
+        "youtube_search_query": "lower back stretches menstrual pain",
+        "calories_per_minute": 2.0,
+        "image_url": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400"
+    },
+    {
+        "name": "Restorative Yin Yoga",
+        "category": "yoga",
+        "intensity_level": "low",
+        "duration_minutes": 30,
+        "suitable_phases": [
+            "menstrual",
+            "late_luteal"
+        ],
+        "description": "Ultra-gentle yoga with long-held poses using props for support. Perfect for days when energy is very low.",
+        "benefits": "Deep relaxation, connective tissue release, stress reduction, improves sleep quality, hormone balance support",
+        "instructions": [
+            "Supported Child's Pose - place a bolster or pillows lengthwise, rest torso on it, turn head to one side, stay 5 minutes",
+            "Supported Butterfly - sit with soles together, place bolsters under each knee for support, recline back onto pillows, stay 5 minutes",
+            "Supported Side-Lying Pose - lie on side with pillow between knees, pillow under head, stay 3 minutes each side",
+            "Supported Bridge - lie on back with block under sacrum, arms relaxed, stay 3 minutes",
+            "Legs Up Wall - sit sideways next to wall, swing legs up wall as you lower back down, stay 5 minutes"
+        ],
+        "youtube_video_id": "1l5nU6e6ZCs",
+        "youtube_video_title": "30 Min Yin Yoga for Menstruation",
+        "youtube_search_query": "yin yoga menstrual cycle",
+        "calories_per_minute": 1.5,
+        "image_url": "https://images.unsplash.com/photo-1510894347713-fc3ed6fdf539?w=400"
+    },
+    {
+        "name": "Gentle Walking",
+        "category": "cardio",
+        "intensity_level": "low",
+        "duration_minutes": 20,
+        "suitable_phases": [
+            "menstrual",
+            "follicular",
+            "ovulation",
+            "luteal"
+        ],
+        "description": "A light walk at a comfortable pace to boost endorphins and reduce menstrual discomfort without overexertion.",
+        "benefits": "Natural pain relief through endorphins, improves mood, reduces fatigue, promotes blood circulation",
+        "instructions": [
+            "Wear comfortable, supportive shoes",
+            "Start with 2-3 minutes of slow walking to warm up",
+            "Walk at a pace where you can comfortably hold a conversation",
+            "Focus on deep, rhythmic breathing",
+            "Swing arms naturally to engage upper body",
+            "If outdoors, choose a flat, safe route",
+            "Finish with 2-3 minutes of slower walking to cool down",
+            "Stretch calves and hips briefly after walking"
+        ],
+        "youtube_video_id": "njeZ29umqVE",
+        "youtube_video_title": "20 Minute Walk at Home",
+        "youtube_search_query": "gentle walking workout at home",
+        "calories_per_minute": 3.5,
+        "image_url": "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=400"
+    },
+    {
+        "name": "Period-Safe Core Activation",
+        "category": "pilates",
+        "intensity_level": "low",
+        "duration_minutes": 15,
+        "suitable_phases": [
+            "menstrual",
+            "follicular"
+        ],
+        "description": "Gentle core exercises that avoid putting pressure on the abdomen while maintaining strength. No crunches or planks.",
+        "benefits": "Maintains core strength, supports lower back, safe for period days, improves posture",
+        "instructions": [
+            "Diaphragmatic Breathing - lie on back, knees bent, breathe into belly feeling core engage on exhale, 10 breaths",
+            "Dead Bug (Modified) - lie on back, knees at 90°, slowly lower one heel to tap floor, alternate sides, 10 each side",
+            "Pelvic Tilts - lie on back, slowly tilt pelvis to flatten lower back against floor, release, repeat 15 times",
+            "Bird Dog - on all fours, extend opposite arm and leg simultaneously, hold 3 seconds, alternate, 8 each side",
+            "Side-Lying Leg Raises - lie on side, lift top leg slowly, lower with control, 12 each side"
+        ],
+        "youtube_video_id": "K56Z12XNQ5c",
+        "youtube_video_title": "Gentle Core Workout for Period",
+        "youtube_search_query": "gentle core exercises period",
+        "calories_per_minute": 3.0,
+        "image_url": "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400"
+    },
+    {
+        "name": "Calming Evening Stretches",
+        "category": "stretching",
+        "intensity_level": "low",
+        "duration_minutes": 15,
+        "suitable_phases": [
+            "menstrual",
+            "luteal",
+            "late_luteal"
+        ],
+        "description": "Relaxing stretches to do before bed to improve sleep quality and reduce nighttime cramping.",
+        "benefits": "Better sleep quality, reduces nighttime cramps, releases daily tension, calms nervous system",
+        "instructions": [
+            "Neck Rolls - gently roll head in circles, 5 each direction, never force the movement",
+            "Shoulder Shrugs - inhale shoulders to ears, exhale drop them, repeat 10 times",
+            "Seated Cat-Cow - sit in chair or on floor, arch and round spine with breath, 10 repetitions",
+            "Reclined Figure-4 - lie on back, cross ankle over opposite knee, gently pull toward chest, 1 minute each side",
+            "Supine Butterfly - lie back, soles of feet together, knees wide, arms overhead, stay 3 minutes",
+            "Savasana - lie flat on back, let feet fall open, palms up, breathe naturally for 3 minutes"
+        ],
+        "youtube_video_id": "v7AYKMP6rOE",
+        "youtube_video_title": "Bedtime Stretches for Period Relief",
+        "youtube_search_query": "bedtime stretches period",
+        "calories_per_minute": 1.5,
+        "image_url": "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400"
+    },
+    {
+        "name": "Energy Boost Yoga Flow",
+        "category": "yoga",
+        "intensity_level": "medium",
+        "duration_minutes": 25,
+        "suitable_phases": [
+            "follicular",
+            "ovulation"
+        ],
+        "description": "An invigorating yoga flow to harness rising energy during the follicular phase. Builds strength and flexibility.",
+        "benefits": "Boosts energy, builds strength, increases flexibility, improves focus and concentration",
+        "instructions": [
+            "Start in Mountain Pose - stand tall, feet together, arms at sides, take 3 deep breaths",
+            "Sun Salutation A - perform 5 rounds flowing through forward fold, plank, cobra, downward dog",
+            "Warrior I - step right foot forward, left foot angled, arms reach up, hold 5 breaths each side",
+            "Warrior II - from Warrior I, open hips to side, arms extend parallel to floor, hold 5 breaths each side",
+            "Triangle Pose - straighten front leg, reach forward then down to shin, other arm to sky, hold 5 breaths each side",
+            "Chair Pose - feet together, sink hips back like sitting in chair, arms overhead, hold 5 breaths",
+            "Cool down with Forward Fold and Savasana for 3 minutes"
+        ],
+        "youtube_video_id": "4pKly2JojMw",
+        "youtube_video_title": "Morning Energy Yoga Flow",
+        "youtube_search_query": "energy boost yoga morning",
+        "calories_per_minute": 5.0,
+        "image_url": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400"
+    },
+    {
+        "name": "HIIT for High Energy Days",
+        "category": "cardio",
+        "intensity_level": "high",
+        "duration_minutes": 20,
+        "suitable_phases": [
+            "follicular",
+            "ovulation"
+        ],
+        "description": "High-intensity interval training to maximize the high estrogen and energy of the ovulation phase.",
+        "benefits": "Maximum calorie burn, builds endurance, releases endorphins, improves cardiovascular health",
+        "instructions": [
+            "Warm up: 2 minutes of light jogging in place",
+            "Round 1 (repeat 4 times): 30 sec jumping jacks → 30 sec rest",
+            "Round 2 (repeat 4 times): 30 sec high knees → 30 sec rest",
+            "Round 3 (repeat 4 times): 30 sec burpees → 30 sec rest",
+            "Round 4 (repeat 4 times): 30 sec mountain climbers → 30 sec rest",
+            "Cool down: 3 minutes of walking in place and stretching"
+        ],
+        "youtube_video_id": "ml6cT4AZdqI",
+        "youtube_video_title": "20 Minute HIIT Workout",
+        "youtube_search_query": "20 minute hiit workout",
+        "calories_per_minute": 12.0,
+        "image_url": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400"
+    },
+    {
+        "name": "Strength Training - Full Body",
+        "category": "strength",
+        "intensity_level": "medium",
+        "duration_minutes": 30,
+        "suitable_phases": [
+            "follicular",
+            "ovulation"
+        ],
+        "description": "Full body strength workout leveraging peak strength during the follicular and ovulation phases.",
+        "benefits": "Builds muscle, increases metabolism, improves bone density, enhances body composition",
+        "instructions": [
+            "Warm up: 3 minutes of light cardio and arm circles",
+            "Squats - 3 sets of 12 reps: feet shoulder-width, lower until thighs parallel to floor",
+            "Push-ups (or modified) - 3 sets of 10 reps: hands shoulder-width, lower chest to floor",
+            "Lunges - 3 sets of 10 each leg: step forward, lower back knee toward floor",
+            "Bent-Over Rows (use water bottles if no weights) - 3 sets of 12: hinge at hips, pull elbows back",
+            "Glute Bridges - 3 sets of 15: lie on back, lift hips squeezing glutes at top",
+            "Plank Hold - 3 sets of 30 seconds: maintain straight line from head to heels",
+            "Cool down: 3 minutes of stretching"
+        ],
+        "youtube_video_id": "qX9FSZJu448",
+        "youtube_video_title": "Full Body Strength Workout",
+        "youtube_search_query": "full body strength training women",
+        "calories_per_minute": 6.5,
+        "image_url": "https://images.unsplash.com/photo-1550345332-09e3ac987658?w=400"
+    },
+    {
+        "name": "Dance Cardio Fun",
+        "category": "dance",
+        "intensity_level": "medium",
+        "duration_minutes": 25,
+        "suitable_phases": [
+            "follicular",
+            "ovulation"
+        ],
+        "description": "Fun dance workout to boost mood and burn calories when energy is high.",
+        "benefits": "Improves mood, burns calories, improves coordination, fun way to exercise",
+        "instructions": [
+            "Start with simple side steps to warm up - 2 minutes",
+            "Add arm movements - reach up, punch forward, wave side to side",
+            "Grapevine steps - step side, step behind, step side, tap",
+            "Body rolls and hip movements - let the music guide you",
+            "Jump and turn sequences when comfortable",
+            "Cool down with slow swaying movements",
+            "No pressure to be perfect - just move and have fun!"
+        ],
+        "youtube_video_id": "ZWk19OVon2k",
+        "youtube_video_title": "25 Min Dance Cardio Workout",
+        "youtube_search_query": "dance cardio workout fun",
+        "calories_per_minute": 8.0,
+        "image_url": "https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?w=400"
+    },
+    {
+        "name": "PMS Relief Yoga",
+        "category": "yoga",
+        "intensity_level": "low",
+        "duration_minutes": 20,
+        "suitable_phases": [
+            "luteal",
+            "late_luteal"
+        ],
+        "description": "Yoga sequence specifically designed to ease PMS symptoms including mood swings, breast tenderness, and irritability.",
+        "benefits": "Reduces PMS symptoms, calms irritability, eases breast tenderness, improves mood",
+        "instructions": [
+            "Start seated - close eyes and take 5 deep breaths to center yourself",
+            "Seated Forward Fold - extend legs, fold forward gently, hold 1 minute",
+            "Supported Fish Pose - place block between shoulder blades, let chest open, hold 2 minutes",
+            "Wide-Legged Forward Fold - stand with legs wide, fold forward, let head hang, hold 1 minute",
+            "Reclined Bound Angle - lie back, soles together, knees wide, arms relaxed, hold 3 minutes",
+            "Legs Up the Wall - lie with legs resting on wall, stay 3-5 minutes",
+            "Final rest in Savasana for 2 minutes"
+        ],
+        "youtube_video_id": "GLy2rYHwUqY",
+        "youtube_video_title": "Yoga for PMS - Gentle Practice",
+        "youtube_search_query": "yoga for pms relief",
+        "calories_per_minute": 2.5,
+        "image_url": "https://images.unsplash.com/photo-1510894347713-fc3ed6fdf539?w=400"
+    },
+    {
+        "name": "Water Exercises",
+        "category": "swimming",
+        "intensity_level": "low",
+        "duration_minutes": 30,
+        "suitable_phases": [
+            "menstrual",
+            "follicular",
+            "ovulation",
+            "luteal"
+        ],
+        "description": "Low-impact water exercises that reduce joint stress and provide relief during menstruation.",
+        "benefits": "Zero impact on joints, relieves cramps through water pressure, cooling effect, full body workout",
+        "instructions": [
+            "Water walking - walk back and forth in chest-deep water for 5 minutes",
+            "Leg kicks - hold pool edge, kick legs straight back and forth, 2 minutes",
+            "Arm circles - stand in shoulder-deep water, make large circles with arms, 30 seconds each direction",
+            "Jogging in place - lift knees high in chest-deep water, 3 minutes",
+            "Side steps - step sideways along pool length, back and forth 3 times",
+            "Floating rest - relax on back (use pool noodle if needed), float for 2 minutes",
+            "Cool down with gentle swimming or floating"
+        ],
+        "youtube_video_id": "gh5mAtmeR3Y",
+        "youtube_video_title": "Water Aerobics for Beginners",
+        "youtube_search_query": "water exercises low impact",
+        "calories_per_minute": 5.0,
+        "image_url": "https://images.unsplash.com/photo-1530549387789-4c1017266635?w=400"
+    },
+    {
+        "name": "Chair Yoga for Low Energy",
+        "category": "yoga",
+        "intensity_level": "low",
+        "duration_minutes": 15,
+        "suitable_phases": [
+            "menstrual",
+            "late_luteal"
+        ],
+        "description": "Gentle yoga you can do sitting in a chair for days when standing feels too difficult.",
+        "benefits": "Accessible when energy is lowest, reduces cramps, can be done at office, improves posture",
+        "instructions": [
+            "Seated Cat-Cow - sit tall, inhale arch back, exhale round spine, repeat 10 times",
+            "Seated Twist - sit tall, place right hand on left knee, twist left, hold 30 seconds each side",
+            "Seated Forward Fold - sit at edge of chair, fold forward over legs, let head hang, hold 1 minute",
+            "Neck Stretches - drop ear to shoulder, hold 30 seconds each side",
+            "Ankle Circles - lift one foot, circle ankle 10 times each direction, switch feet",
+            "Seated Figure-4 - cross ankle over opposite knee, gentle lean forward, hold 30 seconds each side",
+            "Final breath: Close eyes, take 5 deep breaths"
+        ],
+        "youtube_video_id": "TdgAtvUhD4g",
+        "youtube_video_title": "Chair Yoga - Gentle Practice",
+        "youtube_search_query": "chair yoga gentle",
+        "calories_per_minute": 2.0,
+        "image_url": "https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=400"
+    },
+    {
+        "name": "Foam Rolling for Recovery",
+        "category": "recovery",
+        "intensity_level": "low",
+        "duration_minutes": 15,
+        "suitable_phases": [
+            "menstrual",
+            "follicular",
+            "luteal"
+        ],
+        "description": "Self-myofascial release using a foam roller to reduce muscle tension and improve circulation.",
+        "benefits": "Releases muscle knots, improves blood flow, reduces soreness, aids recovery, relieves lower back tension",
+        "instructions": [
+            "Lower Back - sit on roller at lower back, support with hands behind you, gently roll up and down, 1-2 minutes",
+            "Upper Back - lie with roller at shoulder blade level, arms crossed, roll from mid to upper back, 1-2 minutes",
+            "Glutes - sit on roller, cross right ankle over left knee, roll right glute, 1 minute each side",
+            "IT Band - lie on side with roller under outer thigh, roll from hip to knee, 1 minute each side",
+            "Calves - sit with roller under calves, roll from ankle to knee, 1 minute",
+            "Quads - lie face down with roller under thighs, roll from hip to knee, 1-2 minutes"
+        ],
+        "youtube_video_id": "SxQvpDL6-tg",
+        "youtube_video_title": "Full Body Foam Rolling",
+        "youtube_search_query": "foam rolling routine recovery",
+        "calories_per_minute": 2.0,
+        "image_url": "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400"
+    },
+    {
+        "name": "Pilates for Core & Posture",
+        "category": "pilates",
+        "intensity_level": "medium",
+        "duration_minutes": 25,
+        "suitable_phases": [
+            "follicular",
+            "ovulation"
+        ],
+        "description": "Classical Pilates exercises to strengthen core, improve posture, and build lean muscle.",
+        "benefits": "Stronger core, better posture, lean muscle, improved body awareness, enhanced flexibility",
+        "instructions": [
+            "The Hundred - lie on back, legs at tabletop, arms pump up and down, 100 pumps with breath pattern",
+            "Roll Up - lie flat, arms overhead, slowly roll up to seated reaching for toes, roll back down, 8 reps",
+            "Single Leg Circles - lie on back, one leg to ceiling, draw small circles, 5 each direction per leg",
+            "Rolling Like a Ball - sit with knees to chest, roll back and up to balance, 8 rolls",
+            "Single Leg Stretch - lie on back, one knee to chest, other leg extended, alternate, 10 each side",
+            "Spine Stretch Forward - sit tall with legs wide, reach forward rounding spine, 5 reps",
+            "Side Kicks - lie on side, kick top leg front and back, 10 each direction per side",
+            "Final stretch and rest"
+        ],
+        "youtube_video_id": "K56Z12XNQ5c",
+        "youtube_video_title": "25 Min Pilates for Core",
+        "youtube_search_query": "pilates core workout",
+        "calories_per_minute": 5.0,
+        "image_url": "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400"
+    },
+    {
+        "name": "Tension Release Meditation",
+        "category": "meditation",
+        "intensity_level": "low",
+        "duration_minutes": 12,
+        "suitable_phases": [
+            "menstrual",
+            "luteal",
+            "late_luteal"
+        ],
+        "description": "Guided body scan meditation to systematically release tension stored in the body during menstruation.",
+        "benefits": "Deep relaxation, reduces muscle tension, calms anxiety, improves body awareness, better sleep",
+        "instructions": [
+            "Lie down comfortably with support under knees if needed",
+            "Close eyes and take 5 deep breaths",
+            "Bring attention to feet - notice any tension, breathe into the area, release",
+            "Move attention to calves, then thighs - same process of noticing and releasing",
+            "Focus on lower belly and uterus - send breath and warmth to this area",
+            "Continue up through stomach, chest, shoulders, arms, hands",
+            "Relax face - jaw, around eyes, forehead",
+            "Scan entire body one more time, letting go of any remaining tension",
+            "Rest in stillness for 2 minutes before slowly opening eyes"
+        ],
+        "youtube_video_id": "inpok4MKVLM",
+        "youtube_video_title": "Body Scan Meditation for Relaxation",
+        "youtube_search_query": "body scan meditation relaxation",
+        "calories_per_minute": 1.0,
+        "image_url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400"
+    },
+    {
+        "name": "Belly Dance Hip Work",
+        "category": "dance",
+        "intensity_level": "medium",
+        "duration_minutes": 20,
+        "suitable_phases": [
+            "follicular",
+            "ovulation"
+        ],
+        "description": "Belly dance movements focusing on hip isolations to strengthen pelvic muscles and boost confidence.",
+        "benefits": "Strengthens pelvic floor, improves hip mobility, boosts confidence, fun and feminine movement",
+        "instructions": [
+            "Stand with feet hip-width apart, slight bend in knees",
+            "Hip Drops - shift weight to one hip and drop it down, alternate sides, 20 each side",
+            "Hip Circles - draw circles with hips, 10 clockwise, 10 counterclockwise",
+            "Figure 8s - trace horizontal figure 8 with hips, 20 reps",
+            "Hip Shimmies - rapidly alternate hip drops, start slow, speed up, 30 seconds",
+            "Undulations - create wave motion from chest through belly to hips",
+            "Put it all together with music - dance freely incorporating moves learned"
+        ],
+        "youtube_video_id": "pL3dhPqz5Hk",
+        "youtube_video_title": "Belly Dance Workout for Beginners",
+        "youtube_search_query": "belly dance workout beginners",
+        "calories_per_minute": 6.0,
+        "image_url": "https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?w=400"
+    }
+]

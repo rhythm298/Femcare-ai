@@ -4,6 +4,7 @@
  */
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { useQueryClient } from '@tanstack/react-query';
 import { authApi } from '../services/api';
 import type { User, LoginCredentials, RegisterData } from '../types';
 
@@ -22,6 +23,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export function AuthProvider({ children }: { children: ReactNode }) {
     const [user, setUser] = useState<User | null>(null);
     const [isLoading, setIsLoading] = useState(true);
+    const queryClient = useQueryClient();
 
     // Check for existing token on mount
     useEffect(() => {
@@ -41,6 +43,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }, []);
 
     const login = async (credentials: LoginCredentials) => {
+        // Clear any cached data from previous user
+        queryClient.clear();
+
         const { access_token } = await authApi.login(credentials);
         localStorage.setItem('femcare_token', access_token);
         const userData = await authApi.getProfile();
@@ -54,6 +59,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     };
 
     const logout = () => {
+        // Clear all cached data to prevent data leakage between users
+        queryClient.clear();
         localStorage.removeItem('femcare_token');
         setUser(null);
     };

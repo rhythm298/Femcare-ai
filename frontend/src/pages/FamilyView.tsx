@@ -46,7 +46,18 @@ interface SharedData {
     mood?: { mood: string; emoji: string; energy_level: number; date: string };
     recent_symptoms?: Array<{ symptom: string; severity: number; date: string }>;
     exercise?: { recent: Array<any>; current_streak: number };
-    cycle?: { current_day: number; predicted_next: string | null };
+    cycle?: {
+        current_day: number;
+        predicted_next: string | null;
+        days_until_period: number;
+        is_on_period: boolean;
+        period_days_remaining: number;
+        flow_level: string;
+        avg_cycle_length: number;
+        avg_period_length: number;
+        phase_info: string;
+        start_date: string;
+    };
     water?: { today_ml: number; goal_ml: number; percent: number };
     nutrition?: {
         today_calories: number;
@@ -385,19 +396,52 @@ export default function FamilyView() {
                 </div>
             )}
 
-            {/* Cycle Info */}
+            {/* Cycle Info - ENHANCED */}
             {sharedData.permissions.can_view_cycle && sharedData.cycle && (
                 <div className="data-card cycle-card">
                     <div className="card-header">
                         <Calendar size={20} />
                         <h3>Cycle Status</h3>
                     </div>
-                    <div className="cycle-day">
-                        <span className="day-number">Day {sharedData.cycle.current_day}</span>
+
+                    {/* Period Status Banner */}
+                    {sharedData.cycle.is_on_period && (
+                        <div className="period-banner">
+                            <span className="period-emoji">🩸</span>
+                            <div className="period-info">
+                                <strong>Currently on Period</strong>
+                                <span>{sharedData.cycle.period_days_remaining} days remaining</span>
+                            </div>
+                        </div>
+                    )}
+
+                    <div className="cycle-details-grid">
+                        <div className="cycle-stat">
+                            <span className="stat-value">{sharedData.cycle.current_day}</span>
+                            <span className="stat-label">Cycle Day</span>
+                        </div>
+                        <div className="cycle-stat">
+                            <span className="stat-value">{sharedData.cycle.days_until_period || '—'}</span>
+                            <span className="stat-label">Days to Period</span>
+                        </div>
+                        <div className="cycle-stat">
+                            <span className="stat-value">{sharedData.cycle.flow_level || '—'}</span>
+                            <span className="stat-label">Flow Level</span>
+                        </div>
+                        <div className="cycle-stat">
+                            <span className="stat-value">{sharedData.cycle.avg_cycle_length}</span>
+                            <span className="stat-label">Avg Cycle</span>
+                        </div>
                     </div>
+
+                    <div className="phase-insight">
+                        <Lightbulb size={16} />
+                        <span>{sharedData.cycle.phase_info}</span>
+                    </div>
+
                     {sharedData.cycle.predicted_next && (
                         <p className="next-period">
-                            Next period expected: {new Date(sharedData.cycle.predicted_next).toLocaleDateString()}
+                            📅 Next period expected: {new Date(sharedData.cycle.predicted_next).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                         </p>
                     )}
                 </div>

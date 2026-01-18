@@ -20,7 +20,7 @@ import CalorieLogger from './pages/CalorieLogger';
 import FamilySharing from './pages/FamilySharing';
 import FamilyView from './pages/FamilyView';
 import WaterTracker from './pages/WaterTracker';
-import Fertility from './pages/Fertility';
+// import Fertility from './pages/Fertility'; // Disabled for now
 import MoodJournal from './pages/MoodJournal';
 
 // Loading spinner component
@@ -130,7 +130,7 @@ function App() {
                 <Route path="nutrition" element={<CalorieLogger />} />
                 <Route path="hydration" element={<WaterTracker />} />
                 <Route path="family" element={<FamilySharing />} />
-                <Route path="fertility" element={<Fertility />} />
+                {/* <Route path="fertility" element={<Fertility />} /> */}
                 <Route path="mood" element={<MoodJournal />} />
             </Route>
 

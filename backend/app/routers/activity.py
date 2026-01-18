@@ -374,7 +374,10 @@ async def log_exercise(
         today = log_date or date.today()
         if streak.last_activity_date:
             days_diff = (today - streak.last_activity_date).days
-            if days_diff == 1:
+            if days_diff == 0:
+                # Same day - don't change streak, just update activity count
+                pass
+            elif days_diff == 1:
                 streak.current_streak += 1
                 if streak.current_streak > streak.longest_streak:
                     streak.longest_streak = streak.current_streak

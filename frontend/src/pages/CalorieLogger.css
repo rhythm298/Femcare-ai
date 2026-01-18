@@ -54,6 +54,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: none !important;
+    /* Prevent rotation from conflicting CSS */
 }
 
 .calorie-ring::before {

@@ -54,12 +54,14 @@ interface MoodInsights {
 export default function MoodJournal() {
     const queryClient = useQueryClient();
     const [showLogModal, setShowLogModal] = useState(false);
+    const [showSuggestionsModal, setShowSuggestionsModal] = useState(false);
     const [selectedMood, setSelectedMood] = useState<MoodOption | null>(null);
     const [energyLevel, setEnergyLevel] = useState(3);
     const [selectedTriggers, setSelectedTriggers] = useState<string[]>([]);
     const [gratitude, setGratitude] = useState('');
     const [notes, setNotes] = useState('');
     const [isLogging, setIsLogging] = useState(false);
+    const [lastSuggestions, setLastSuggestions] = useState<any>(null);
 
     // Fetch mood options
     const { data: options } = useQuery<MoodOptions>({
@@ -127,9 +129,21 @@ export default function MoodJournal() {
             });
 
             if (res.ok) {
+                const data = await res.json();
                 queryClient.invalidateQueries({ queryKey: ['todayMood'] });
                 queryClient.invalidateQueries({ queryKey: ['moodInsights'] });
                 queryClient.invalidateQueries({ queryKey: ['moodStreak'] });
+
+                // Store suggestions and show modal
+                if (data.suggestions) {
+                    setLastSuggestions({
+                        ...data.suggestions,
+                        mood: selectedMood.mood,
+                        emoji: selectedMood.emoji
+                    });
+                    setShowSuggestionsModal(true);
+                }
+
                 resetForm();
                 setShowLogModal(false);
             }
@@ -378,6 +392,68 @@ export default function MoodJournal() {
                                 disabled={!selectedMood || isLogging}
                             >
                                 {isLogging ? 'Saving...' : 'Save Mood'}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Suggestions Modal */}
+            {showSuggestionsModal && lastSuggestions && (
+                <div className="modal-overlay" onClick={() => setShowSuggestionsModal(false)}>
+                    <div className="modal suggestions-modal glass animate-slide-up" onClick={(e) => e.stopPropagation()}>
+                        <div className="modal-header">
+                            <h2>
+                                <span>{lastSuggestions.emoji}</span> Suggestions for feeling {lastSuggestions.mood}
+                            </h2>
+                            <button className="btn btn-ghost btn-icon" onClick={() => setShowSuggestionsModal(false)}>
+                                <X size={20} />
+                            </button>
+                        </div>
+                        <div className="modal-body">
+                            <p className="suggestions-tip">{lastSuggestions.tip}</p>
+
+                            {/* Activities */}
+                            <div className="suggestions-section">
+                                <h4>🎯 Try These Activities</h4>
+                                <div className="activity-list">
+                                    {lastSuggestions.activities?.map((activity: any, i: number) => (
+                                        <div key={i} className="activity-item">
+                                            <span className="activity-emoji">{activity.emoji}</span>
+                                            <div className="activity-content">
+                                                <span className="activity-name">{activity.name}</span>
+                                                <span className="activity-benefit">{activity.benefit}</span>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Videos */}
+                            <div className="suggestions-section">
+                                <h4>🎬 Recommended Videos</h4>
+                                <div className="video-list">
+                                    {lastSuggestions.videos?.map((video: any, i: number) => (
+                                        <a
+                                            key={i}
+                                            href={video.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="video-item"
+                                        >
+                                            <div className="video-info">
+                                                <span className="video-title">{video.title}</span>
+                                                <span className="video-meta">{video.type} • {video.duration}</span>
+                                            </div>
+                                            <ChevronRight size={18} />
+                                        </a>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="modal-footer">
+                            <button className="btn btn-primary" onClick={() => setShowSuggestionsModal(false)}>
+                                Got it! 💜
                             </button>
                         </div>
                     </div>

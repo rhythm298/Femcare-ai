@@ -323,3 +323,104 @@
         gap: var(--spacing-3);
     }
 }
+
+/* Suggestions Modal */
+.suggestions-modal {
+    max-width: 500px;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.suggestions-tip {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-4);
+    padding: var(--spacing-3);
+    background: rgba(168, 85, 247, 0.1);
+    border-radius: var(--radius-lg);
+}
+
+.suggestions-section {
+    margin-bottom: var(--spacing-4);
+}
+
+.suggestions-section h4 {
+    margin-bottom: var(--spacing-3);
+    font-size: var(--font-size-base);
+}
+
+/* Activity List */
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-3);
+    padding: var(--spacing-3);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+}
+
+.activity-emoji {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.activity-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+}
+
+.activity-name {
+    font-weight: 500;
+}
+
+.activity-benefit {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+}
+
+/* Video List */
+.video-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.video-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-3);
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(168, 85, 247, 0.1));
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: inherit;
+    transition: all var(--transition-fast);
+}
+
+.video-item:hover {
+    transform: translateX(4px);
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(168, 85, 247, 0.2));
+}
+
+.video-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+}
+
+.video-title {
+    font-weight: 500;
+}
+
+.video-meta {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    text-transform: capitalize;
+}

@@ -63,6 +63,118 @@ JOURNAL_PROMPTS = [
     "How did you practice self-care today?",
 ]
 
+# Mood-based suggestions for activities and videos
+MOOD_SUGGESTIONS = {
+    "sad": {
+        "activities": [
+            {"name": "Take a 10-minute walk outside", "emoji": "🚶‍♀️", "benefit": "Sunlight and movement boost serotonin"},
+            {"name": "Call or text a friend", "emoji": "📱", "benefit": "Connection helps lift mood"},
+            {"name": "Watch a comfort movie or show", "emoji": "🎬", "benefit": "Familiar content provides comfort"},
+            {"name": "Write 3 things you're grateful for", "emoji": "📝", "benefit": "Shifts focus to positives"},
+        ],
+        "videos": [
+            {"title": "5-Minute Mood Boost Meditation", "type": "meditation", "duration": "5 min", "url": "https://www.youtube.com/results?search_query=5+minute+mood+boost+meditation"},
+            {"title": "Gentle Yoga for Sadness", "type": "yoga", "duration": "15 min", "url": "https://www.youtube.com/results?search_query=gentle+yoga+for+sadness"},
+        ]
+    },
+    "anxious": {
+        "activities": [
+            {"name": "Practice box breathing (4-4-4-4)", "emoji": "🧘", "benefit": "Activates parasympathetic nervous system"},
+            {"name": "Ground yourself: 5-4-3-2-1 senses exercise", "emoji": "🌱", "benefit": "Brings you back to the present"},
+            {"name": "Put on calming music", "emoji": "🎵", "benefit": "Lowers heart rate and cortisol"},
+            {"name": "Write down your worries, then set them aside", "emoji": "📓", "benefit": "Externalizes anxiety"},
+        ],
+        "videos": [
+            {"title": "Breathing Exercise for Anxiety", "type": "breathing", "duration": "5 min", "url": "https://www.youtube.com/results?search_query=breathing+exercise+for+anxiety"},
+            {"title": "Guided Meditation for Calm", "type": "meditation", "duration": "10 min", "url": "https://www.youtube.com/results?search_query=guided+meditation+anxiety+relief"},
+        ]
+    },
+    "stressed": {
+        "activities": [
+            {"name": "Take 5 deep, slow breaths", "emoji": "💨", "benefit": "Activates relaxation response"},
+            {"name": "Do a quick stretching routine", "emoji": "🙆‍♀️", "benefit": "Releases physical tension"},
+            {"name": "Step away from screens for 10 min", "emoji": "📵", "benefit": "Reduces mental overload"},
+            {"name": "Make a to-do list to organize thoughts", "emoji": "✅", "benefit": "Creates sense of control"},
+        ],
+        "videos": [
+            {"title": "10-Minute Stress Relief Yoga", "type": "yoga", "duration": "10 min", "url": "https://www.youtube.com/results?search_query=10+minute+stress+relief+yoga"},
+            {"title": "Progressive Muscle Relaxation", "type": "relaxation", "duration": "8 min", "url": "https://www.youtube.com/results?search_query=progressive+muscle+relaxation"},
+        ]
+    },
+    "tired": {
+        "activities": [
+            {"name": "Take a 20-minute power nap", "emoji": "😴", "benefit": "Restores alertness without grogginess"},
+            {"name": "Drink a glass of water", "emoji": "💧", "benefit": "Dehydration causes fatigue"},
+            {"name": "Get some fresh air", "emoji": "🌬️", "benefit": "Oxygen boosts energy"},
+            {"name": "Do 5 jumping jacks", "emoji": "⚡", "benefit": "Quick burst increases blood flow"},
+        ],
+        "videos": [
+            {"title": "5-Minute Energizing Stretch", "type": "stretching", "duration": "5 min", "url": "https://www.youtube.com/results?search_query=5+minute+energizing+stretch"},
+            {"title": "Yoga for Energy", "type": "yoga", "duration": "15 min", "url": "https://www.youtube.com/results?search_query=yoga+for+energy+boost"},
+        ]
+    },
+    "irritated": {
+        "activities": [
+            {"name": "Take 10 deep breaths before reacting", "emoji": "🧘", "benefit": "Creates pause between trigger and response"},
+            {"name": "Go for a brisk walk", "emoji": "🚶‍♀️", "benefit": "Physical activity releases tension"},
+            {"name": "Write out your frustrations", "emoji": "📝", "benefit": "Venting on paper helps process emotions"},
+            {"name": "Listen to upbeat music", "emoji": "🎧", "benefit": "Shifts emotional state"},
+        ],
+        "videos": [
+            {"title": "Anger Release Meditation", "type": "meditation", "duration": "10 min", "url": "https://www.youtube.com/results?search_query=anger+release+meditation"},
+            {"title": "Quick Frustration Release Exercise", "type": "exercise", "duration": "5 min", "url": "https://www.youtube.com/results?search_query=frustration+release+exercise"},
+        ]
+    },
+    "happy": {
+        "activities": [
+            {"name": "Share your joy with someone", "emoji": "💕", "benefit": "Amplifies positive emotions"},
+            {"name": "Write about what made you happy", "emoji": "📖", "benefit": "Savoring extends happiness"},
+            {"name": "Do something fun or creative", "emoji": "🎨", "benefit": "Ride the positive wave"},
+            {"name": "Pay it forward with kindness", "emoji": "🌟", "benefit": "Giving increases happiness"},
+        ],
+        "videos": [
+            {"title": "Gratitude Meditation", "type": "meditation", "duration": "10 min", "url": "https://www.youtube.com/results?search_query=gratitude+meditation"},
+            {"title": "Joyful Dance Workout", "type": "dance", "duration": "10 min", "url": "https://www.youtube.com/results?search_query=happy+dance+workout"},
+        ]
+    },
+    "calm": {
+        "activities": [
+            {"name": "Practice mindfulness for 5 minutes", "emoji": "🧘‍♀️", "benefit": "Deepen your calm state"},
+            {"name": "Read a book or journal", "emoji": "📚", "benefit": "Relaxing mental engagement"},
+            {"name": "Take a slow nature walk", "emoji": "🌳", "benefit": "Nature enhances calm"},
+            {"name": "Do some gentle stretching", "emoji": "🌸", "benefit": "Maintain body-mind connection"},
+        ],
+        "videos": [
+            {"title": "Peaceful Nature Meditation", "type": "meditation", "duration": "15 min", "url": "https://www.youtube.com/results?search_query=peaceful+nature+meditation"},
+            {"title": "Restorative Yoga", "type": "yoga", "duration": "20 min", "url": "https://www.youtube.com/results?search_query=restorative+yoga+for+relaxation"},
+        ]
+    },
+    "energetic": {
+        "activities": [
+            {"name": "Go for a run or workout", "emoji": "🏃‍♀️", "benefit": "Channel your energy productively"},
+            {"name": "Tackle a challenging task", "emoji": "💪", "benefit": "Use high energy for hard things"},
+            {"name": "Dance to your favorite songs", "emoji": "💃", "benefit": "Celebrate your energy!"},
+            {"name": "Try something new", "emoji": "✨", "benefit": "Great time for new experiences"},
+        ],
+        "videos": [
+            {"title": "High Energy Dance Workout", "type": "dance", "duration": "20 min", "url": "https://www.youtube.com/results?search_query=high+energy+dance+workout"},
+            {"title": "Power Yoga Flow", "type": "yoga", "duration": "25 min", "url": "https://www.youtube.com/results?search_query=power+yoga+flow"},
+        ]
+    }
+}
+
+# Default suggestions for moods not specifically listed
+DEFAULT_SUGGESTIONS = {
+    "activities": [
+        {"name": "Take a moment to check in with yourself", "emoji": "🪞", "benefit": "Self-awareness is powerful"},
+        {"name": "Drink water and have a healthy snack", "emoji": "🍎", "benefit": "Basic care matters"},
+        {"name": "Step outside for fresh air", "emoji": "🌿", "benefit": "Nature helps regulate mood"},
+    ],
+    "videos": [
+        {"title": "5-Minute Mindfulness", "type": "meditation", "duration": "5 min", "url": "https://www.youtube.com/results?search_query=5+minute+mindfulness+meditation"},
+    ]
+}
+
 
 @router.get("/options")
 async def get_mood_options():
@@ -74,6 +186,20 @@ async def get_mood_options():
         "daily_prompt": random.choice(JOURNAL_PROMPTS)
     }
 
+
+@router.get("/suggestions/{mood}")
+async def get_mood_suggestions(mood: str):
+    """Get activity and video suggestions for a specific mood."""
+    suggestions = MOOD_SUGGESTIONS.get(mood.lower(), DEFAULT_SUGGESTIONS)
+    mood_info = next((m for m in MOOD_OPTIONS if m["mood"] == mood.lower()), None)
+    
+    return {
+        "mood": mood.lower(),
+        "emoji": mood_info["emoji"] if mood_info else "😐",
+        "activities": suggestions["activities"],
+        "videos": suggestions["videos"],
+        "message": f"Here are some things that might help when you're feeling {mood.lower()}:"
+    }
 
 @router.post("/log")
 async def log_mood(
@@ -113,13 +239,21 @@ async def log_mood(
     db.commit()
     db.refresh(mood_log)
     
+    # Get mood-based suggestions
+    suggestions = MOOD_SUGGESTIONS.get(mood.lower(), DEFAULT_SUGGESTIONS)
+    
     return {
         "success": True,
         "id": mood_log.id,
         "mood": mood_log.mood,
         "emoji": emoji,
         "energy_level": energy_level,
-        "message": "Mood logged successfully! 💜"
+        "message": "Mood logged successfully! 💜",
+        "suggestions": {
+            "activities": suggestions["activities"][:3],  # Top 3 activities
+            "videos": suggestions["videos"][:2],  # Top 2 videos
+            "tip": f"Since you're feeling {mood.lower()}, here are some suggestions that might help!"
+        }
     }
 
 
@@ -414,7 +548,7 @@ async def get_mood_streak(
         "current_streak": current_streak,
         "longest_streak": longest_streak,
         "total_days_logged": len(dates),
-        "last_logged": dates[0].isoformat() if dates else None
+        "last_logged": dates[0].isoformat() if dates and hasattr(dates[0], 'isoformat') else (str(dates[0]) if dates else None)
     }
 
 

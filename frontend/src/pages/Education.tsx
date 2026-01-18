@@ -221,9 +221,181 @@ export default function Education() {
                                 </div>
                             )}
 
-                            {selectedArticle.id !== 1 && selectedArticle.id !== 2 && (
+                            {selectedArticle.id === 3 && (
                                 <div className="article-full">
-                                    <p className="coming-soon">Full article content coming soon! This is a preview.</p>
+                                    <h3>What is Endometriosis?</h3>
+                                    <p>Endometriosis is a condition where tissue similar to the uterine lining grows outside the uterus. It affects approximately 1 in 10 women and can cause significant pain and fertility issues.</p>
+
+                                    <h3>Common Signs and Symptoms</h3>
+                                    <ul>
+                                        <li><strong>Severe menstrual cramps</strong> - Pain that doesn't respond to regular painkillers</li>
+                                        <li><strong>Chronic pelvic pain</strong> - Pain between periods, not just during menstruation</li>
+                                        <li><strong>Pain during intercourse</strong> - Deep pain during or after sex</li>
+                                        <li><strong>Heavy periods</strong> - Excessive bleeding or bleeding between periods</li>
+                                        <li><strong>Painful bowel movements</strong> - Especially during menstruation</li>
+                                        <li><strong>Fatigue</strong> - Chronic tiredness, especially around your period</li>
+                                        <li><strong>Infertility</strong> - Difficulty getting pregnant</li>
+                                    </ul>
+
+                                    <h3>When to Seek Medical Help</h3>
+                                    <p>See a doctor if you experience:</p>
+                                    <ul>
+                                        <li>Period pain that disrupts daily activities</li>
+                                        <li>Pain that progressively worsens over time</li>
+                                        <li>Difficulty conceiving after 12 months of trying</li>
+                                        <li>Any of the symptoms above that concern you</li>
+                                    </ul>
+
+                                    <h3>Important Note</h3>
+                                    <p>On average, it takes 7-10 years to diagnose endometriosis. Tracking your symptoms in FemCare AI can help you identify patterns and provide valuable information to your healthcare provider.</p>
+                                </div>
+                            )}
+
+                            {selectedArticle.id === 4 && (
+                                <div className="article-full">
+                                    <h3>Foods That Support Hormonal Balance</h3>
+                                    <p>What you eat significantly impacts your hormonal health. Here's what to include:</p>
+
+                                    <h4>🥬 Include More:</h4>
+                                    <ul>
+                                        <li><strong>Leafy greens</strong> - Spinach, kale, broccoli (rich in magnesium)</li>
+                                        <li><strong>Fatty fish</strong> - Salmon, sardines (omega-3 fatty acids)</li>
+                                        <li><strong>Whole grains</strong> - Oats, quinoa, brown rice (fiber and B vitamins)</li>
+                                        <li><strong>Legumes</strong> - Lentils, chickpeas (plant protein and iron)</li>
+                                        <li><strong>Berries</strong> - Blueberries, strawberries (antioxidants)</li>
+                                        <li><strong>Nuts and seeds</strong> - Flaxseeds, walnuts (healthy fats)</li>
+                                    </ul>
+
+                                    <h4>⚠️ Limit These:</h4>
+                                    <ul>
+                                        <li><strong>Processed foods</strong> - High in inflammatory ingredients</li>
+                                        <li><strong>Excessive sugar</strong> - Can disrupt insulin and hormones</li>
+                                        <li><strong>Alcohol</strong> - Affects estrogen metabolism</li>
+                                        <li><strong>Excess caffeine</strong> - Can worsen PMS symptoms</li>
+                                    </ul>
+
+                                    <h4>Phase-Based Eating Tips:</h4>
+                                    <ul>
+                                        <li><strong>Menstrual:</strong> Iron-rich foods (leafy greens, red meat)</li>
+                                        <li><strong>Follicular:</strong> Fresh vegetables and lean proteins</li>
+                                        <li><strong>Ovulation:</strong> Fiber-rich foods and antioxidants</li>
+                                        <li><strong>Luteal:</strong> Complex carbs and magnesium-rich foods</li>
+                                    </ul>
+                                </div>
+                            )}
+
+                            {selectedArticle.id === 5 && (
+                                <div className="article-full">
+                                    <h3>The Hormone-Mood Connection</h3>
+                                    <p>Your menstrual cycle significantly affects your mental health due to fluctuating hormone levels.</p>
+
+                                    <h4>How Hormones Affect Mood:</h4>
+                                    <ul>
+                                        <li><strong>Estrogen</strong> - Boosts serotonin ("feel-good" hormone). Higher levels = better mood</li>
+                                        <li><strong>Progesterone</strong> - Has calming effects but can cause fatigue and low mood when dropping</li>
+                                        <li><strong>Testosterone</strong> - Peaks at ovulation, boosting energy and libido</li>
+                                    </ul>
+
+                                    <h4>Mood by Cycle Phase:</h4>
+                                    <ul>
+                                        <li><strong>Menstrual (Days 1-5):</strong> Low hormones may cause fatigue and introspection. Practice self-care.</li>
+                                        <li><strong>Follicular (Days 6-14):</strong> Rising estrogen improves mood and creativity. Great time for new projects!</li>
+                                        <li><strong>Ovulation (Day 14):</strong> Peak energy, confidence, and social mood.</li>
+                                        <li><strong>Luteal (Days 15-28):</strong> PMS symptoms may include anxiety, irritability, and mood swings.</li>
+                                    </ul>
+
+                                    <h4>Tips for Managing Cycle-Related Mood Changes:</h4>
+                                    <ul>
+                                        <li>Track your mood to identify patterns</li>
+                                        <li>Exercise regularly (even gentle movement helps)</li>
+                                        <li>Prioritize sleep, especially in the luteal phase</li>
+                                        <li>Practice stress-reduction techniques</li>
+                                        <li>Talk to a doctor if symptoms are severe (PMDD)</li>
+                                    </ul>
+                                </div>
+                            )}
+
+                            {selectedArticle.id === 6 && (
+                                <div className="article-full">
+                                    <h3>Understanding Your Fertile Window</h3>
+                                    <p>Fertility awareness methods help you understand when you're most likely to conceive.</p>
+
+                                    <h4>The Fertile Window:</h4>
+                                    <p>You can only conceive during a small window each cycle:</p>
+                                    <ul>
+                                        <li>An egg lives for 12-24 hours after ovulation</li>
+                                        <li>Sperm can survive 3-5 days in the reproductive tract</li>
+                                        <li>Your fertile window is approximately 6 days: 5 days before ovulation + ovulation day</li>
+                                    </ul>
+
+                                    <h4>Signs of Ovulation:</h4>
+                                    <ul>
+                                        <li><strong>Cervical mucus changes</strong> - Becomes clear, stretchy, egg-white consistency</li>
+                                        <li><strong>Basal body temperature rise</strong> - Slight increase after ovulation</li>
+                                        <li><strong>Mild pelvic pain</strong> - Called "mittelschmerz" (middle pain)</li>
+                                        <li><strong>Increased libido</strong> - Natural biological drive</li>
+                                        <li><strong>Breast tenderness</strong> - Due to hormonal shifts</li>
+                                    </ul>
+
+                                    <h4>Tracking Methods:</h4>
+                                    <ul>
+                                        <li><strong>Calendar/App:</strong> FemCare AI predicts based on your cycle history</li>
+                                        <li><strong>Basal Body Temperature:</strong> Take your temp every morning before getting up</li>
+                                        <li><strong>Cervical Mucus:</strong> Check daily and log consistency</li>
+                                        <li><strong>Ovulation Predictor Kits:</strong> Detect LH surge 24-36 hours before ovulation</li>
+                                    </ul>
+
+                                    <h4>Important:</h4>
+                                    <p>Fertility awareness requires consistent tracking and is most effective when combining multiple methods. Consult a healthcare provider for personalized guidance.</p>
+                                </div>
+                            )}
+
+                            {selectedArticle.id === 7 && (
+                                <div className="article-full">
+                                    <h3>🍫 The Myth: Chocolate Makes Cramps Worse</h3>
+                                    <p className="myth-verdict">❌ BUSTED!</p>
+
+                                    <h4>What Research Actually Says:</h4>
+                                    <p>Dark chocolate may actually HELP with cramps! Here's why:</p>
+                                    <ul>
+                                        <li><strong>Magnesium content:</strong> Dark chocolate is rich in magnesium, which helps relax muscles and may reduce cramping</li>
+                                        <li><strong>Mood boost:</strong> Chocolate triggers endorphin release, which can help with pain perception</li>
+                                        <li><strong>Antioxidants:</strong> Dark chocolate contains flavonoids that may reduce inflammation</li>
+                                    </ul>
+
+                                    <h4>The Caveat:</h4>
+                                    <ul>
+                                        <li>Choose dark chocolate (70%+ cacao) for benefits</li>
+                                        <li>Milk chocolate has less magnesium and more sugar</li>
+                                        <li>Moderation is key - a few squares, not a whole bar!</li>
+                                    </ul>
+
+                                    <h4>Bottom Line:</h4>
+                                    <p>Go ahead and have some dark chocolate during your period! It's not only okay - it might actually help. Just choose quality over quantity. 🍫✨</p>
+                                </div>
+                            )}
+
+                            {selectedArticle.id === 8 && (
+                                <div className="article-full">
+                                    <h3>🤰 The Myth: You Can't Get Pregnant on Your Period</h3>
+                                    <p className="myth-verdict">❌ BUSTED!</p>
+
+                                    <h4>The Truth:</h4>
+                                    <p>While unlikely, it IS possible to get pregnant during your period. Here's why:</p>
+
+                                    <h4>How It Can Happen:</h4>
+                                    <ul>
+                                        <li><strong>Short cycles:</strong> If your cycle is 21-24 days, you may ovulate just a few days after your period ends</li>
+                                        <li><strong>Sperm survival:</strong> Sperm can live up to 5 days in the reproductive tract</li>
+                                        <li><strong>Early ovulation:</strong> Some women ovulate earlier than "typical" day 14</li>
+                                        <li><strong>Breakthrough bleeding:</strong> What seems like a period might be ovulation spotting</li>
+                                    </ul>
+
+                                    <h4>Example Scenario:</h4>
+                                    <p>If you have a 24-day cycle and a 6-day period, and you have sex on day 6, the sperm could still be alive when you ovulate on day 10!</p>
+
+                                    <h4>Bottom Line:</h4>
+                                    <p>If you're trying to avoid pregnancy, never assume any day is "safe." Use protection throughout your cycle. If you're trying to conceive, your period days are unlikely but not impossible. Track your cycle to understand your unique patterns!</p>
                                 </div>
                             )}
                         </div>

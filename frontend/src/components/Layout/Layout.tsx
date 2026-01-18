@@ -31,7 +31,7 @@ import './Layout.css';
 const navItems = [
     { path: '/', icon: LayoutDashboard, label: 'Dashboard' },
     { path: '/cycles', icon: Calendar, label: 'Cycle Tracker' },
-    { path: '/fertility', icon: Target, label: 'Fertility' },
+    // { path: '/fertility', icon: Target, label: 'Fertility' }, // Disabled for now
     { path: '/symptoms', icon: Activity, label: 'Symptoms' },
     { path: '/mood', icon: Smile, label: 'Mood Journal' },
     { path: '/activity', icon: Dumbbell, label: 'Activity' },

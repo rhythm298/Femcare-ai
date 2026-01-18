@@ -234,6 +234,31 @@
     font-style: italic;
 }
 
+.myth-verdict {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    text-align: center;
+    color: #10b981;
+    padding: var(--spacing-4);
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-4);
+}
+
+.article-full h4 {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    margin-top: var(--spacing-4);
+    margin-bottom: var(--spacing-2);
+    color: var(--text-primary);
+}
+
+.article-full p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-3);
+}
+
 .modal-footer {
     display: flex;
     justify-content: space-between;

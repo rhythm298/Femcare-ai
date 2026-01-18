@@ -469,17 +469,54 @@ async def get_shared_data(
             "current_streak": exercise_streak.current_streak if exercise_streak else 0
         }
     
-    # Get cycle info if permitted
+    # Get cycle info if permitted - ENHANCED with detailed period insights
     if permissions.get("can_view_cycle", False):
         latest_cycle = db.query(models.CycleEntry).filter(
             models.CycleEntry.user_id == family_member.user_id
         ).order_by(desc(models.CycleEntry.start_date)).first()
         
         if latest_cycle:
-            days_since_start = (date.today() - latest_cycle.start_date).days
+            days_since_start = (date.today() - latest_cycle.start_date).days + 1
+            avg_cycle_length = latest_cycle.cycle_length or 28
+            avg_period_length = latest_cycle.period_length or 5
+            
+            # Calculate days until next period
+            days_until_period = None
+            if latest_cycle.predicted_next_start:
+                days_until_period = (latest_cycle.predicted_next_start - date.today()).days
+            else:
+                days_until_period = avg_cycle_length - days_since_start
+            
+            # Is she currently on her period?
+            is_on_period = days_since_start <= avg_period_length
+            
+            # Period days remaining (if on period)
+            period_days_remaining = max(0, avg_period_length - days_since_start) if is_on_period else 0
+            
+            # Current phase details
+            phase_info = ""
+            if days_since_start <= avg_period_length:
+                phase_info = f"Day {days_since_start} of period - likely experiencing menstrual symptoms"
+            elif days_since_start <= 13:
+                phase_info = "Follicular phase - energy is building up"
+            elif days_since_start <= 16:
+                phase_info = "Ovulation phase - peak energy and mood"
+            elif days_until_period and days_until_period <= 7:
+                phase_info = f"PMS likely - about {days_until_period} days until next period"
+            else:
+                phase_info = "Luteal phase - preparing for next cycle"
+            
             shared_data["cycle"] = {
                 "current_day": days_since_start,
-                "predicted_next": str(latest_cycle.predicted_next_start) if latest_cycle.predicted_next_start else None
+                "predicted_next": str(latest_cycle.predicted_next_start) if latest_cycle.predicted_next_start else None,
+                "days_until_period": days_until_period if days_until_period and days_until_period > 0 else 0,
+                "is_on_period": is_on_period,
+                "period_days_remaining": period_days_remaining,
+                "flow_level": latest_cycle.flow_level or "unknown",
+                "avg_cycle_length": avg_cycle_length,
+                "avg_period_length": avg_period_length,
+                "phase_info": phase_info,
+                "start_date": str(latest_cycle.start_date)
             }
     
     # Get water tracking data

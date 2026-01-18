@@ -641,7 +641,8 @@ async def get_dashboard_summary(
     db: Session = Depends(get_db)
 ):
     """
-    Get dashboard summary for the home page.
+    Get dashboard summary with REAL-TIME health score calculation.
+    Health score is based on actual user data, not just risk scores.
     """
     today = date.today()
     
@@ -670,22 +671,136 @@ async def get_dashboard_summary(
         if latest_cycle.predicted_next_start:
             days_until_period = (latest_cycle.predicted_next_start - today).days
     
-    # Get recent symptoms
+    # Get all cycles and symptoms for health calculation
+    all_cycles = db.query(models.CycleEntry).filter(
+        models.CycleEntry.user_id == current_user.id
+    ).all()
+    
+    six_months_ago = today - timedelta(days=180)
+    all_symptoms = db.query(models.Symptom).filter(
+        models.Symptom.user_id == current_user.id,
+        models.Symptom.date >= six_months_ago
+    ).all()
+    
+    # Get recent symptoms for display
     week_ago = today - timedelta(days=7)
     recent_symptoms = db.query(models.Symptom).filter(
         models.Symptom.user_id == current_user.id,
         models.Symptom.date >= week_ago
     ).order_by(desc(models.Symptom.date)).limit(5).all()
     
-    # Get latest risk scores
-    risk_summary = {}
-    for condition in ["pcos", "endometriosis", "anemia", "thyroid"]:
-        latest_risk = db.query(models.RiskScore).filter(
-            models.RiskScore.user_id == current_user.id,
-            models.RiskScore.condition_type == condition
-        ).order_by(desc(models.RiskScore.calculated_at)).first()
+    # === CALCULATE REAL HEALTH SCORE ===
+    health_factors = []
+    health_score = 100.0  # Start at 100 and deduct based on factors
+    
+    # Factor 1: Cycle Regularity (max -20 points)
+    if len(all_cycles) >= 3:
+        cycle_lengths = [c.cycle_length for c in all_cycles if c.cycle_length]
+        if cycle_lengths:
+            std_length = np.std(cycle_lengths)
+            avg_length = np.mean(cycle_lengths)
+            
+            # Very irregular = more deduction
+            if std_length > 10:
+                health_score -= 15
+                health_factors.append("Very irregular cycles")
+            elif std_length > 7:
+                health_score -= 10
+                health_factors.append("Moderately irregular cycles")
+            elif std_length > 4:
+                health_score -= 5
+            
+            # Abnormal cycle length
+            if avg_length < 21 or avg_length > 35:
+                health_score -= 10
+                health_factors.append("Cycle length outside normal range")
+    else:
+        # Not enough data - small penalty
+        health_score -= 5
+    
+    # Factor 2: Flow Level - CURRENT cycle has immediate impact
+    # First check latest cycle's flow
+    if latest_cycle and latest_cycle.flow_level:
+        current_flow = latest_cycle.flow_level.lower()
+        if current_flow == "very_heavy":
+            health_score -= 12
+            health_factors.append("Current cycle: Very heavy flow")
+        elif current_flow == "heavy":
+            health_score -= 8
+            health_factors.append("Current cycle: Heavy flow")
+        elif current_flow == "light":
+            health_score += 3  # Light flow is a positive indicator
+        elif current_flow == "spotting":
+            health_score += 2
+    
+    # Also check historical pattern (additional penalty if consistent)
+    heavy_cycles = [c for c in all_cycles if c.flow_level and c.flow_level.lower() in ["heavy", "very_heavy"]]
+    if len(heavy_cycles) >= 3:
+        heavy_ratio = len(heavy_cycles) / max(len(all_cycles), 1)
+        if heavy_ratio > 0.5:
+            health_score -= 5  # Additional penalty for consistent heavy periods
+    
+    # Factor 3: Symptom Severity (max -25 points)
+    if all_symptoms:
+        avg_severity = np.mean([s.severity for s in all_symptoms])
+        symptom_count = len(all_symptoms)
         
-        risk_summary[condition] = latest_risk.score if latest_risk else 0.0
+        if avg_severity >= 7:
+            health_score -= 20
+            health_factors.append("High symptom severity")
+        elif avg_severity >= 5:
+            health_score -= 12
+            health_factors.append("Moderate symptom severity")
+        elif avg_severity >= 3:
+            health_score -= 5
+        
+        # Frequent symptoms
+        if symptom_count > 50:
+            health_score -= 5
+            health_factors.append("Frequent symptom logging")
+    
+    # Factor 4: Pain Symptoms (max -15 points)
+    pain_symptoms = [s for s in all_symptoms if "pain" in s.symptom_type.lower() or s.symptom_type.lower() == "cramps"]
+    if pain_symptoms:
+        pain_avg = np.mean([s.severity for s in pain_symptoms])
+        if pain_avg >= 7:
+            health_score -= 15
+            health_factors.append("Severe pain symptoms")
+        elif pain_avg >= 5:
+            health_score -= 8
+    
+    # Factor 5: Fatigue (max -10 points)
+    fatigue_symptoms = [s for s in all_symptoms if "fatigue" in s.symptom_type.lower() or "tired" in s.symptom_type.lower()]
+    if len(fatigue_symptoms) >= 5:
+        health_score -= 10
+        health_factors.append("Chronic fatigue")
+    elif len(fatigue_symptoms) >= 3:
+        health_score -= 5
+    
+    # Factor 6: Mood/Emotional Health (max -10 points)
+    mood_symptoms = [s for s in all_symptoms if s.category == "emotional"]
+    if len(mood_symptoms) >= 10:
+        health_score -= 10
+        health_factors.append("Frequent emotional symptoms")
+    elif len(mood_symptoms) >= 5:
+        health_score -= 5
+    
+    # Factor 7: Recent Mood Log Energy (bonus up to +5 points)
+    recent_moods = db.query(models.MoodLog).filter(
+        models.MoodLog.user_id == current_user.id,
+        models.MoodLog.date >= week_ago
+    ).all()
+    
+    if recent_moods:
+        avg_energy = np.mean([m.energy_level for m in recent_moods if m.energy_level])
+        if avg_energy >= 4:
+            health_score += 5  # Bonus for good energy
+        elif avg_energy <= 2:
+            health_score -= 5
+            health_factors.append("Low energy levels")
+    
+    # Ensure score is within bounds
+    health_score = max(0, min(100, health_score))
     
     # Get unread insights count
     unread_insights = db.query(models.HealthInsight).filter(
@@ -707,9 +822,18 @@ async def get_dashboard_summary(
     
     current_streak = streak.current_streak if streak else 0
     
-    # Calculate simple health score
-    avg_risk = np.mean(list(risk_summary.values())) if risk_summary else 0
-    health_score = round((1 - avg_risk) * 100, 1)
+    # Build risk summary from actual calculations
+    pcos_result = calculate_pcos_risk(current_user, all_cycles, all_symptoms)
+    endo_result = calculate_endometriosis_risk(all_symptoms, all_cycles)
+    anemia_result = calculate_anemia_risk(all_symptoms, all_cycles)
+    thyroid_result = calculate_thyroid_risk(current_user, all_symptoms, all_cycles)
+    
+    risk_summary = {
+        "pcos": pcos_result["score"],
+        "endometriosis": endo_result["score"],
+        "anemia": anemia_result["score"],
+        "thyroid": thyroid_result["score"]
+    }
     
     return {
         "current_cycle_day": current_cycle_day,
@@ -729,5 +853,6 @@ async def get_dashboard_summary(
         "unread_insights": unread_insights,
         "pending_recommendations": pending_recommendations,
         "current_streak": current_streak,
-        "health_score": health_score
+        "health_score": round(health_score, 1),
+        "health_factors": health_factors[:5]  # Top 5 factors affecting score
     }

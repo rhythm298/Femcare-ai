@@ -95,7 +95,7 @@ export default function Dashboard() {
                 </div>
                 <div className="health-score-badge">
                     <Heart className="pulse-icon" />
-                    <span className="score">{dashboard?.health_score?.toFixed(0) || 85}</span>
+                    <span className="score">{dashboard?.health_score ? dashboard.health_score.toFixed(0) : '...'}</span>
                     <span className="label">Health Score</span>
                 </div>
             </div>
